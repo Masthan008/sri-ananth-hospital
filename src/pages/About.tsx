@@ -52,22 +52,26 @@ const About = () => {
     {
       icon: Heart,
       title: "Compassionate Care",
-      description: "We treat every patient with empathy, respect, and genuine concern for their well-being."
+      description: "We treat every patient with empathy, respect, and genuine concern for their well-being.",
+      image: "/core-values/compassion.jpg"
     },
     {
       icon: Shield,
       title: "Excellence in Medicine",
-      description: "We maintain the highest standards of medical practice and continuously improve our services."
+      description: "We maintain the highest standards of medical practice and continuously improve our services.",
+      image: "/core-values/excellence.jpg"
     },
     {
       icon: Users,
       title: "Patient-First Approach",
-      description: "Every decision we make is centered around the needs and comfort of our patients."
+      description: "Every decision we make is centered around the needs and comfort of our patients.",
+      image: "/core-values/patient-first.jpg"
     },
     {
       icon: Star,
       title: "Continuous Innovation",
-      description: "We embrace new technologies and methods to provide better healthcare outcomes."
+      description: "We embrace new technologies and methods to provide better healthcare outcomes.",
+      image: "/core-values/innovation.jpg"
     }
   ];
 
@@ -191,10 +195,27 @@ const About = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-6">
-                  <div className="flex justify-center mb-4">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                      <value.icon className="w-8 h-8 text-primary" />
-                    </div>
+                  <div className="h-40 w-full mb-4 overflow-hidden rounded-lg">
+                    <img 
+                      src={value.image} 
+                      alt={value.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        // Fallback to a solid color if image fails to load
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent) {
+                          parent.style.background = '#f3f4f6';
+                          parent.classList.add('flex', 'items-center', 'justify-center');
+                          parent.innerHTML = `
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                              <${value.icon} class="w-8 h-8 text-primary" />
+                            </div>
+                          `;
+                        }
+                      }}
+                    />
                   </div>
                   <h3 className="text-lg font-semibold mb-3">{value.title}</h3>
                   <p className="text-gray-600 text-sm">{value.description}</p>

@@ -34,6 +34,21 @@ const Home = () => {
       name: "Venkat Rao",
       text: "24/7 emergency service saved my life. Forever grateful to the entire team.",
       rating: 5
+    },
+    {
+      name: "Anjali Mehta",
+      text: "The cardiology department is exceptional. Dr. Sharma's expertise and care made all the difference in my recovery.",
+      rating: 5
+    },
+    {
+      name: "Suresh Patel",
+      text: "Clean facilities, minimal wait times, and compassionate care. The neurology team provided excellent treatment for my condition.",
+      rating: 5
+    },
+    {
+      name: "Srinivas V",
+      text: "This is a highly equipped hospital relative to this place (Vikarabad). We visited the gynecologist Dr. Pavani at this hospital. She is highly qualified and experienced. We are fully satisfied with her treatment. This hospital's gynecology dept has better facilities compared to many hospitals in Hyderabad. If you are looking for best treatment in decent cost, this is the best hospital.",
+      rating: 5
     }
   ];
 

@@ -157,8 +157,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in leading-tight text-white">
-            Caring for Health,<br />
-            <span className="text-white">Caring for You</span>
+            <div className="block">Caring for Health Caring for You</div>
           </h1>
           <p className="text-2xl md:text-3xl font-semibold mb-8 animate-slide-in-left text-white bg-red-600/90 inline-block px-6 py-2 rounded-full">
             <span className="flex items-center justify-center space-x-2 whitespace-nowrap">

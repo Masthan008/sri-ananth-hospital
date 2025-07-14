@@ -150,12 +150,12 @@ const About = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Mission Card */}
-            <Card className="animate-scale-in overflow-hidden border-0 shadow-lg group">
-              <div className="h-48 overflow-hidden">
+            <Card className="animate-scale-in overflow-hidden border-0 shadow-lg group flex flex-col h-full">
+              <div className="flex-1 overflow-hidden">
                 <img 
                   src="/about-sections/mission.jpg" 
                   alt="Our Mission" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-auto max-h-64 object-contain transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
@@ -181,12 +181,12 @@ const About = () => {
             </Card>
 
             {/* Vision Card */}
-            <Card className="animate-scale-in overflow-hidden border-0 shadow-lg group">
-              <div className="h-48 overflow-hidden">
+            <Card className="animate-scale-in overflow-hidden border-0 shadow-lg group flex flex-col h-full">
+              <div className="flex-1 overflow-hidden flex items-center justify-center bg-white p-4">
                 <img 
                   src="/about-sections/vision.jpg" 
                   alt="Our Vision" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-auto h-auto max-h-64 object-contain transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';

@@ -7,6 +7,7 @@ type GalleryImage = {
   src: string;
   alt: string;
   category: string;
+  title?: string;
 };
 
 const Gallery = () => {
@@ -27,55 +28,73 @@ const Gallery = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Sample gallery images - replace with your actual images
+  // Hospital gallery images using available images
   const galleryImages: GalleryImage[] = [
+    // Hospital Building
     {
-      id: '1',
-      src: '/images/gallery/hospital-1.jpg',
-      alt: 'Hospital Building Exterior',
+      id: 'f1',
+      src: '/images/gallery/BUILDING .png',
+      alt: 'Sri Ananth Hospital Building',
       category: 'facility'
     },
+    
+    // Medical Team
     {
-      id: '2',
-      src: '/images/gallery/doctors-1.jpg',
-      alt: 'Our Medical Team',
+      id: 'm1',
+      src: '/images/gallery/MEDICAL TEAM .png',
+      alt: 'Our Expert Medical Team',
       category: 'staff'
     },
     {
-      id: '3',
-      src: '/images/gallery/operation-theater.jpg',
-      alt: 'Modern Operation Theater',
-      category: 'facility'
-    },
-    {
-      id: '4',
-      src: '/images/gallery/emergency-room.jpg',
-      alt: 'Emergency Room',
-      category: 'facility'
-    },
-    {
-      id: '5',
-      src: '/images/gallery/doctor-patient.jpg',
+      id: 'm2',
+      src: '/images/gallery/DOCTOR WITH PATIENT .png',
       alt: 'Doctor with Patient',
       category: 'staff'
     },
+    
+    // Facilities
     {
-      id: '6',
-      src: '/images/gallery/event-1.jpg',
+      id: 'fc1',
+      src: '/images/gallery/OPERATION THEATRE .png',
+      alt: 'Modern Operation Theater',
+      category: 'facilities',
+      title: 'Operation Theater'
+    },
+    {
+      id: 'fc2',
+      src: '/images/gallery/EMEGENCY ROOM .png',
+      alt: 'Intensive Care Unit (ICU)',
+      category: 'facilities',
+      title: 'ICU'
+    },
+    {
+      id: 'fc3',
+      src: '/images/gallery/PATIENT ROOM .png',
+      alt: 'Inpatient Wards',
+      category: 'facilities',
+      title: 'Inpatient Wards'
+    },
+    {
+      id: 'fc4',
+      src: '/images/gallery/LABORATORY .png',
+      alt: 'Pharmacy',
+      category: 'facilities',
+      title: 'Pharmacy'
+    },
+    {
+      id: 'fc5',
+      src: '/images/gallery/DOCTOR WITH PATIENT .png',
+      alt: 'Dental Clinic',
+      category: 'facilities',
+      title: 'Dental Clinic'
+    },
+    
+    // Events
+    {
+      id: 'e1',
+      src: '/images/gallery/HEALTH CAMP .png',
       alt: 'Health Camp Event',
       category: 'events'
-    },
-    {
-      id: '7',
-      src: '/images/gallery/lab.jpg',
-      alt: 'Modern Laboratory',
-      category: 'facility'
-    },
-    {
-      id: '8',
-      src: '/images/gallery/patient-room.jpg',
-      alt: 'Comfortable Patient Room',
-      category: 'facility'
     }
   ];
 
@@ -97,42 +116,52 @@ const Gallery = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
             <button
               onClick={() => setActiveCategory('all')}
-              className={`px-6 py-2 rounded-full font-medium transition-colors ${
+              className={`px-4 py-2 rounded-full font-medium text-sm sm:text-base transition-colors ${
                 activeCategory === 'all' 
-                  ? 'bg-hospital-blue text-white' 
+                  ? 'bg-hospital-blue text-white shadow-md' 
                   : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
             >
-              All
+              All Photos
             </button>
             <button
               onClick={() => setActiveCategory('facility')}
-              className={`px-6 py-2 rounded-full font-medium transition-colors ${
+              className={`px-4 py-2 rounded-full font-medium text-sm sm:text-base transition-colors ${
                 activeCategory === 'facility' 
-                  ? 'bg-hospital-blue text-white' 
+                  ? 'bg-hospital-blue text-white shadow-md' 
                   : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
             >
-              Facilities
+              Hospital
             </button>
             <button
               onClick={() => setActiveCategory('staff')}
-              className={`px-6 py-2 rounded-full font-medium transition-colors ${
+              className={`px-4 py-2 rounded-full font-medium text-sm sm:text-base transition-colors ${
                 activeCategory === 'staff' 
-                  ? 'bg-hospital-blue text-white' 
+                  ? 'bg-hospital-blue text-white shadow-md' 
                   : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
             >
               Medical Team
             </button>
             <button
+              onClick={() => setActiveCategory('facilities')}
+              className={`px-4 py-2 rounded-full font-medium text-sm sm:text-base transition-colors ${
+                activeCategory === 'facilities' 
+                  ? 'bg-hospital-blue text-white shadow-md' 
+                  : 'bg-white text-gray-700 hover:bg-gray-100'
+              }`}
+            >
+              Facilities
+            </button>
+            <button
               onClick={() => setActiveCategory('events')}
-              className={`px-6 py-2 rounded-full font-medium transition-colors ${
+              className={`px-4 py-2 rounded-full font-medium text-sm sm:text-base transition-colors ${
                 activeCategory === 'events' 
-                  ? 'bg-hospital-blue text-white' 
+                  ? 'bg-hospital-blue text-white shadow-md' 
                   : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
             >
@@ -146,21 +175,34 @@ const Gallery = () => {
               <div 
                 key={image.id} 
                 className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
-                data-aos="fade-up"
               >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    const fallback = document.createElement('div');
-                    fallback.className = 'w-full h-64 bg-gray-200 flex items-center justify-center';
-                    fallback.textContent = 'Image not available';
-                    target.parentNode?.insertBefore(fallback, target);
-                  }}
-                />
+                <div className="relative overflow-hidden aspect-square group">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.style.background = '#f3f4f6';
+                        parent.classList.add('flex', 'items-center', 'justify-center');
+                        const errorText = document.createElement('div');
+                        errorText.className = 'text-gray-400 text-sm p-4 text-center';
+                        errorText.textContent = 'Image not available';
+                        parent.appendChild(errorText);
+                      }
+                    }}
+                  />
+                  {image.title && (
+                    <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <h3 className="text-white text-lg font-medium px-4 text-center">
+                        {image.title}
+                      </h3>
+                    </div>
+                  )}
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                   <p className="text-white font-medium">{image.alt}</p>
                 </div>

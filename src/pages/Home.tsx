@@ -135,11 +135,13 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Dr. Gireesha Reddy */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden animate-scale-in">
-              <img 
-                src="/doctors/dr-gireesha.jpg" 
-                alt="Dr. Gireesha Reddy" 
-                className="w-full h-80 object-cover"
-              />
+              <div className="h-80 flex items-center justify-center bg-gray-50 p-4">
+                <img 
+                  src="/doctors/dr-gireesha.jpg" 
+                  alt="Dr. Gireesha Reddy" 
+                  className="h-full w-auto object-contain"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. Gireesha Reddy</h3>
                 <p className="text-lg text-hospital-blue font-semibold mb-4">
@@ -160,11 +162,13 @@ const Home = () => {
 
             {/* Dr. Pavani */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden animate-scale-in" style={{animationDelay: '0.2s'}}>
-              <img 
-                src="/doctors/dr-pavani.jpg" 
-                alt="Dr. Pavani" 
-                className="w-full h-80 object-cover"
-              />
+              <div className="h-80 flex items-center justify-center bg-gray-50 p-4">
+                <img 
+                  src="/doctors/dr-pavani.jpg" 
+                  alt="Dr. Pavani" 
+                  className="h-full w-auto object-contain"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. Pavani</h3>
                 <p className="text-lg text-hospital-blue font-semibold mb-4">
@@ -186,11 +190,13 @@ const Home = () => {
 
             {/* Dr. P Srujan Kumar */}
             <div className="md:col-span-2 lg:col-span-1 bg-white rounded-2xl shadow-lg overflow-hidden animate-scale-in" style={{animationDelay: '0.4s'}}>
-              <img 
-                src="/doctors/dr-srujan.jpg" 
-                alt="Dr. P Srujan Kumar" 
-                className="w-full h-80 object-contain bg-gray-100 p-4"
-              />
+              <div className="h-80 flex items-center justify-center bg-gray-50 p-4">
+                <img 
+                  src="/doctors/dr-srujan.jpg" 
+                  alt="Dr. P Srujan Kumar" 
+                  className="h-full w-auto object-contain"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. P Srujan Kumar</h3>
                 <p className="text-lg text-hospital-blue font-semibold mb-4">

@@ -42,19 +42,19 @@ const Home = () => {
       icon: Clock,
       title: "24/7 Emergency Care",
       description: "Round-the-clock medical emergency services with expert doctors and modern equipment.",
-      image: "/feature-images/emergency-care.jpg"
+      image: "/feature-images/EMERGENCY CARE .png"
     },
     {
       icon: Shield,
       title: "Experienced Doctors",
       description: "Highly qualified specialists with years of experience in their respective fields.",
-      image: "/feature-images/doctors.jpg"
+      image: "/feature-images/EXEPERINECED DOCTORS .png"
     },
     {
       icon: Heart,
       title: "Comprehensive Care",
       description: "Complete healthcare solutions under one roof with state-of-the-art facilities.",
-      image: "/feature-images/comprehensive-care.jpg"
+      image: "/feature-images/COMPEHENSIVE CARE .png"
     },
     {
       icon: Award,

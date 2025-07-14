@@ -194,23 +194,20 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Dr. Srujan */}
+            {/* Dr. Srujan Kumar */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden animate-scale-in" style={{animationDelay: '0.4s'}}>
               <div className="h-80 w-full overflow-hidden bg-gray-50">
                 <div className="w-full h-full flex items-center justify-center p-2">
                   <img 
                     src="/doctors/dr-srujan.jpg" 
-                    alt="Dr. Srujan" 
+                    alt="Dr. Srujan Kumar" 
                     className="h-full w-full object-cover"
                     style={{ objectPosition: 'top center' }}
                   />
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. Srujan</h3>
-                <p className="text-lg text-hospital-blue font-semibold mb-4">
-                  MBBS, MD - General Medicine
-                </p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Dr. Srujan Kumar</h3>
                 <p className="text-gray-600 mb-1 font-medium">Consultant Physician</p>
                 <p className="text-gray-500 text-sm mb-4">General Medicine Specialist</p>
                 <div className="flex items-center space-x-4">

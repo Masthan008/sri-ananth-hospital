@@ -6,22 +6,22 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   plugins: [
-    react({
-      jsxImportSource: '@emotion/react',
-      babel: {
-        plugins: ['@emotion/babel-plugin'],
-      },
-    }),
+    react(),
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
+  esbuild: {
+    jsxImportSource: '@emotion/react',
+    jsx: 'automatic',
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      '@emotion/react/jsx-runtime': path.resolve(
-        __dirname,
-        './node_modules/@emotion/react/jsx-runtime.js',
-      ),
+    },
+  },
+  build: {
+    rollupOptions: {
+      external: ['@emotion/react/jsx-runtime'],
     },
   },
 }));

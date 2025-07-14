@@ -118,19 +118,37 @@ const WhyChooseUs = () => {
     {
       name: "Rajesh Kumar",
       role: "Patient",
-      content: "The care I received was exceptional. The doctors were attentive and the staff was very supportive throughout my treatment.",
+      content: "Excellent care and professional staff. Dr. Gireesha Reddy provided outstanding dental treatment.",
       rating: 5
     },
     {
       name: "Priya Sharma",
-      role: "Patient's Family",
-      content: "The hospital's facilities are top-notch and the medical team is highly professional. Highly recommended!",
+      role: "Patient",
+      content: "The hospital staff is very caring and the facilities are top-notch. Highly recommended!",
       rating: 5
     },
     {
-      name: "Dr. Suresh Patel",
-      role: "Visiting Consultant",
-      content: "I've worked with many hospitals, and the level of care and professionalism here is outstanding.",
+      name: "Venkat Rao",
+      role: "Patient",
+      content: "24/7 emergency service saved my life. Forever grateful to the entire team.",
+      rating: 5
+    },
+    {
+      name: "Anjali Mehta",
+      role: "Patient",
+      content: "The cardiology department is exceptional. Dr. Sharma's expertise and care made all the difference in my recovery.",
+      rating: 5
+    },
+    {
+      name: "Suresh Patel",
+      role: "Patient",
+      content: "Clean facilities, minimal wait times, and compassionate care. The neurology team provided excellent treatment for my condition.",
+      rating: 5
+    },
+    {
+      name: "Srinivas V",
+      role: "Patient",
+      content: "This is a highly equipped hospital relative to this place (Vikarabad). We visited the gynecologist Dr. Pavani at this hospital. She is highly qualified and experienced. We are fully satisfied with her treatment. This hospital's gynecology dept has better facilities compared to many hospitals in Hyderabad. If you are looking for best treatment in decent cost, this is the best hospital.",
       rating: 5
     }
   ];

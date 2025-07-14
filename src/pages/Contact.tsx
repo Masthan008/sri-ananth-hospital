@@ -292,10 +292,10 @@ const Contact = () => {
               Our emergency team is always ready to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="outline" className="bg-white text-red-500 border-white hover:bg-gray-100">
+              <Button size="lg" variant="outline" className="bg-white text-red-500 border-white hover:bg-gray-100 whitespace-nowrap">
                 <a href="tel:+918499995552" className="flex items-center space-x-2">
                   <Phone className="w-5 h-5" />
-                  <span>Call Emergency: +91 84999-95552</span>
+                  <span>Emergency: +91 84999-95552</span>
                 </a>
               </Button>
             </div>

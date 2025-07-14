@@ -12,12 +12,58 @@ import {
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { toast } from "sonner";
 import hospitalHero from "@/assets/hospital-hero-v2.jpg";
 import doctorProfile from "@/assets/doctor-profile.jpg";
 
 const Home = () => {
+  // Feedback form state
+  const [feedback, setFeedback] = useState({
+    name: '',
+    email: '',
+    rating: 0,
+    comment: ''
+  });
+  const [hoverRating, setHoverRating] = useState(0);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  
+  const handleFeedbackChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFeedback(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+  
+  const handleSubmitFeedback = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!feedback.name.trim() || !feedback.comment.trim()) {
+      toast.error('Please fill in all required fields');
+      return;
+    }
+    
+    if (feedback.rating === 0) {
+      toast.error('Please provide a rating');
+      return;
+    }
+    
+    // Here you would typically send the feedback to your backend
+    console.log('Feedback submitted:', feedback);
+    
+    // Show success message
+    toast.success('Thank you for your feedback!');
+    
+    // Reset form
+    setFeedback({
+      name: '',
+      email: '',
+      rating: 0,
+      comment: ''
+    });
+  };
 
   const testimonials = [
     {
@@ -115,9 +161,9 @@ const Home = () => {
             <span className="text-white">Caring for You</span>
           </h1>
           <p className="text-2xl md:text-3xl font-semibold mb-8 animate-slide-in-left text-white bg-red-600/90 inline-block px-6 py-2 rounded-full">
-            <span className="flex items-center justify-center space-x-2">
+            <span className="flex items-center justify-center space-x-2 whitespace-nowrap">
               <Clock className="w-6 h-6" />
-              <span>24/7 Emergency Service Available</span>
+              <span>24/7 Emergency Service Everyday</span>
             </span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-in-right">
@@ -375,6 +421,93 @@ const Home = () => {
                 <ChevronRight className="w-4 h-4" />
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Patient Feedback Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">What Our Patients Say</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Share your experience with us and help us improve our services
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-2xl shadow-lg p-8 max-w-3xl mx-auto">
+            <form onSubmit={handleSubmitFeedback} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">Your Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    value={feedback.name}
+                    onChange={handleFeedbackChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email (Optional)</label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={feedback.email}
+                    onChange={handleFeedbackChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+              </div>
+              
+              <div className="space-y-2">
+                <label htmlFor="rating" className="block text-sm font-medium text-gray-700">Your Rating</label>
+                <div className="flex space-x-2">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <button
+                      key={star}
+                      type="button"
+                      className={`text-2xl focus:outline-none ${
+                        (hoverRating || feedback.rating) >= star 
+                          ? 'text-yellow-400' 
+                          : 'text-gray-300'
+                      }`}
+                      onClick={() => setFeedback(prev => ({ ...prev, rating: star }))}
+                      onMouseEnter={() => setHoverRating(star)}
+                      onMouseLeave={() => setHoverRating(0)}
+                      aria-label={`Rate ${star} out of 5`}
+                    >
+                      ★
+                    </button>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="space-y-2">
+                <label htmlFor="feedback" className="block text-sm font-medium text-gray-700">Your Feedback</label>
+                <textarea
+                  id="comment"
+                  value={feedback.comment}
+                  onChange={handleFeedbackChange}
+                  rows={4}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="Share your experience with us..."
+                  required
+                ></textarea>
+              </div>
+              
+              <div>
+                <button
+                  type="submit"
+                  className="w-full md:w-auto px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                >
+                  Submit Feedback
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </section>

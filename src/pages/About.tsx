@@ -362,7 +362,7 @@ const About = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-red-500 text-white p-8 rounded-2xl animate-scale-in">
             <Clock className="w-16 h-16 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold mb-4">24/7 Emergency Support</h2>
+            <h2 className="text-3xl font-bold mb-4 whitespace-nowrap">24/7 Emergency Service Everyday</h2>
             <p className="text-xl mb-6">
               Our emergency department is always ready to provide immediate medical care 
               with experienced doctors and modern life-saving equipment.

@@ -68,6 +68,17 @@ const Home = () => {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
+  const specialties = [
+    { name: "General Medicine", image: "/lovable-uploads/GENERAL .png", id: "general-medicine" },
+    { name: "Dental", image: "/lovable-uploads/DENTAL .png", id: "dental" },
+    { name: "Urology", image: "/lovable-uploads/UROLOGY .png", id: "urology" },
+    { name: "Neurology", image: "/lovable-uploads/NEUROLOGY .png", id: "neurology" },
+    { name: "Cardiology", image: "/lovable-uploads/CARDIOLOGY .png", id: "cardiology" },
+    { name: "Orthopedics", image: "/lovable-uploads/ORTHOPEDICS .png", id: "orthopedics" },
+    { name: "Audiology", image: "/lovable-uploads/AUDIOLOGY .png", id: "audiology" },
+    { name: "Surgery", image: "/lovable-uploads/SURGERY .png", id: "surgery" },
+  ];
+
 
 
   return (
@@ -174,6 +185,40 @@ const Home = () => {
                   <p className="text-gray-600">{item.description}</p>
                 </CardContent>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Specialties Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in">
+            Our Specialties
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {specialties.map((specialty, index) => (
+              <NavLink 
+                key={index} 
+                to={`/services#${specialty.id}`}
+                className="group block text-center animate-scale-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-0 shadow-md">
+                  <CardContent className="p-0">
+                    <div className="aspect-square flex items-center justify-center overflow-hidden">
+                      <img 
+                        src={specialty.image} 
+                        alt={specialty.name} 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+                <h3 className="text-lg font-semibold mt-4 text-gray-800 group-hover:text-hospital-green transition-colors duration-300">
+                  {specialty.name}
+                </h3>
+              </NavLink>
             ))}
           </div>
         </div>

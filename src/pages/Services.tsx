@@ -11,10 +11,26 @@ import {
   Ear,
   Scissors
 } from "lucide-react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Services = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 100); // Small delay to ensure the page has rendered
+    }
+  }, [location]);
   const services = [
     {
+      id: "general-medicine",
       icon: Stethoscope,
       image: "/lovable-uploads/GENERAL .png",
       title: "General Medicine",
@@ -22,6 +38,7 @@ const Services = () => {
       features: ["Routine Health Check-ups", "Chronic Disease Management", "Preventive Care", "Emergency Consultations"]
     },
     {
+      id: "dental",
       icon: User,
       image: "/lovable-uploads/DENTAL .png",
       title: "Dental",
@@ -29,6 +46,7 @@ const Services = () => {
       features: ["Oral Surgery", "Dental Implants", "Cosmetic Dentistry", "Emergency Dental Care"]
     },
     {
+      id: "urology",
       icon: Activity,
       image: "/lovable-uploads/UROLOGY .png",
       title: "Urology",
@@ -36,6 +54,7 @@ const Services = () => {
       features: ["Kidney Stone Treatment", "Prostate Care", "Urinary Tract Infections", "Male Infertility"]
     },
     {
+      id: "neurology",
       icon: Brain,
       image: "/lovable-uploads/NEUROLOGY .png",
       title: "Neurology",
@@ -43,6 +62,7 @@ const Services = () => {
       features: ["Stroke Management", "Epilepsy Treatment", "Headache Disorders", "Neurological Rehabilitation"]
     },
     {
+      id: "cardiology",
       icon: Heart,
       image: "/lovable-uploads/CARDIOLOGY .png",
       title: "Cardiology",
@@ -50,6 +70,7 @@ const Services = () => {
       features: ["Heart Disease Prevention", "ECG & Echo Services", "Cardiac Rehabilitation", "Emergency Cardiac Care"]
     },
     {
+      id: "orthopedics",
       icon: Bone,
       image: "/lovable-uploads/ORTHOPEDICS .png",
       title: "Orthopedics",
@@ -57,6 +78,7 @@ const Services = () => {
       features: ["Joint Replacement", "Fracture Treatment", "Sports Medicine", "Arthritis Management"]
     },
     {
+      id: "audiology",
       icon: Ear,
       image: "/lovable-uploads/AUDIOLOGY .png",
       title: "Audiology",
@@ -64,6 +86,7 @@ const Services = () => {
       features: ["Hearing Tests", "Hearing Aid Services", "Tinnitus Treatment", "Balance Disorders"]
     },
     {
+      id: "surgery",
       icon: Scissors,
       image: "/lovable-uploads/SURGERY .png",
       title: "Surgery",
@@ -93,9 +116,10 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Card 
+                id={service.id}
                 key={index} 
                 className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-scale-in border-0 shadow-lg overflow-hidden bg-white"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${index * 0.1}s` }} scroll-mt-20
               >
                 <CardContent className="p-0">
                   {/* Image Container */}

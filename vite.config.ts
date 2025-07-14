@@ -5,35 +5,23 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: './',
-  server: {
-    host: "::",
-    port: 8080,
-  },
   plugins: [
     react({
       jsxImportSource: '@emotion/react',
       babel: {
         plugins: ['@emotion/babel-plugin'],
       },
-      jsxRuntime: 'automatic',
     }),
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
-  optimizeDeps: {
-    esbuildOptions: {
-      jsx: 'automatic',
-    },
-  },
-  build: {
-    rollupOptions: {
-      external: ['@emotion/react/jsx-runtime'],
-    },
-  },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
+      '@emotion/react/jsx-runtime': path.resolve(
+        __dirname,
+        './node_modules/@emotion/react/jsx-runtime.js',
+      ),
     },
   },
 }));

@@ -259,9 +259,9 @@ const Home = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUs.map((item, index) => (
-              <Card key={index} className={`group text-center hover:shadow-xl transition-all animate-scale-in border-0 shadow-md overflow-hidden h-full flex flex-col ${index === 3 ? 'bg-gradient-to-br from-amber-500 to-amber-600 text-white' : 'bg-white'}`}>
+              <Card key={index} className="group text-center hover:shadow-xl transition-all animate-scale-in border-0 shadow-md overflow-hidden h-full flex flex-col bg-white">
                 <div className="relative h-48 overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-b from-transparent ${index === 3 ? 'to-black/40' : 'to-black/30'} z-10`}></div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 z-10"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <img 
                       src={item.image} 
@@ -277,12 +277,12 @@ const Home = () => {
                 </div>
                 <CardContent className="p-6 flex-1 flex flex-col">
                   <div className="flex justify-center -mt-12 mb-4 relative z-20">
-                    <div className={`w-16 h-16 rounded-full flex items-center justify-center shadow-lg ${index === 3 ? 'bg-white/20 backdrop-blur-sm' : 'bg-white'}`}>
-                      <item.icon className={`w-8 h-8 ${index === 3 ? 'text-white' : 'text-primary'}`} />
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg bg-white">
+                      <item.icon className="w-8 h-8 text-primary" />
                     </div>
                   </div>
-                  <h3 className={`text-xl font-semibold mb-3 ${index === 3 ? 'text-white' : 'text-gray-800'}`}>{item.title}</h3>
-                  <p className={`flex-1 ${index === 3 ? 'text-white/90' : 'text-gray-600'}`}>{item.description}</p>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-800">{item.title}</h3>
+                  <p className="flex-1 text-gray-600">{item.description}</p>
                 </CardContent>
               </Card>
             ))}

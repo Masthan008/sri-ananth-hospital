@@ -75,7 +75,8 @@ const Home = () => {
       icon: Award,
       title: "Award Winning",
       description: "Recognized for excellence in healthcare with multiple medical awards and certifications.",
-      image: "/images/awards-bg.png"
+      image: "/images/awards-bg.png",
+      iconColor: "text-white"
     }
   ];
 
@@ -258,9 +259,9 @@ const Home = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUs.map((item, index) => (
-              <Card key={index} className={`group text-center hover:shadow-xl transition-all animate-scale-in border-0 shadow-md overflow-hidden h-full flex flex-col ${index === 3 ? 'relative' : 'bg-white'}`}>
+              <Card key={index} className={`group text-center hover:shadow-xl transition-all animate-scale-in border-0 shadow-md overflow-hidden h-full flex flex-col ${index === 3 ? 'bg-gradient-to-br from-amber-500 to-amber-600 text-white' : 'bg-white'}`}>
                 <div className="relative h-48 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 z-10"></div>
+                  <div className={`absolute inset-0 bg-gradient-to-b from-transparent ${index === 3 ? 'to-black/40' : 'to-black/30'} z-10`}></div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <img 
                       src={item.image} 
@@ -270,22 +271,18 @@ const Home = () => {
                         // Fallback to a solid color if image fails to load
                         const target = e.target as HTMLImageElement;
                         target.style.display = 'none';
-                        const parent = target.parentElement?.parentElement;
-                        if (parent) {
-                          parent.style.background = index === 3 ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)' : '#f3f4f6';
-                        }
                       }}
                     />
                   </div>
                 </div>
                 <CardContent className="p-6 flex-1 flex flex-col">
                   <div className="flex justify-center -mt-12 mb-4 relative z-20">
-                    <div className={`w-16 h-16 ${index === 3 ? 'bg-amber-100' : 'bg-white'} rounded-full flex items-center justify-center shadow-lg`}>
-                      <item.icon className={`w-8 h-8 ${index === 3 ? 'text-amber-600' : 'text-primary'}`} />
+                    <div className={`w-16 h-16 rounded-full flex items-center justify-center shadow-lg ${index === 3 ? 'bg-white/20 backdrop-blur-sm' : 'bg-white'}`}>
+                      <item.icon className={`w-8 h-8 ${index === 3 ? 'text-white' : 'text-primary'}`} />
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-gray-800">{item.title}</h3>
-                  <p className="text-gray-600 flex-1">{item.description}</p>
+                  <h3 className={`text-xl font-semibold mb-3 ${index === 3 ? 'text-white' : 'text-gray-800'}`}>{item.title}</h3>
+                  <p className={`flex-1 ${index === 3 ? 'text-white/90' : 'text-gray-600'}`}>{item.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -394,7 +391,7 @@ const Home = () => {
               <NavLink to="/contact">Book Appointment</NavLink>
             </Button>
             <Button size="lg" variant="outline" asChild className="bg-transparent border-white text-white hover:bg-white hover:text-hospital-green">
-              <a href="tel:+918499995552">Call Now: +91 84999-95552</a>
+              <a href="tel:+919966151626">Call Now: +91 9966151626</a>
             </Button>
           </div>
         </div>

@@ -110,9 +110,9 @@ const Home = () => {
       >
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in leading-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in leading-tight text-white">
             Caring for Health,<br />
-            <span className="text-hospital-blue">Caring for You</span>
+            <span className="text-white">Caring for You</span>
           </h1>
           <p className="text-2xl md:text-3xl font-semibold mb-8 animate-slide-in-left text-white bg-red-600/90 inline-block px-6 py-2 rounded-full">
             <span className="flex items-center justify-center space-x-2">
@@ -217,8 +217,7 @@ const Home = () => {
                   BDS MDS<br />
                   <span className="text-gray-600">PERIODONTIST AND IMPLANTOLOGIST</span>
                 </p>
-                <p className="text-gray-600 mb-1 font-medium">Consultant Physician</p>
-                <p className="text-gray-500 text-sm mb-4">General Medicine Specialist</p>
+                <p className="text-gray-600 mb-4 font-medium">Consultant Physician</p>
                 <div className="flex items-center space-x-4">
                   <Button asChild className="flex-1">
                     <a href="tel:+918106121344" className="flex items-center justify-center space-x-2">

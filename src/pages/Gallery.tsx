@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { ChevronUp } from "lucide-react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 type GalleryImage = {
   id: string;
@@ -15,13 +17,24 @@ const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("all");
 
   useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-in-out',
+      mirror: false
+    });
+
     // Show/hide scroll to top button
     const handleScroll = () => {
       setShowScrollToTop(window.scrollY > 300);
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      AOS.refresh();
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -175,6 +188,9 @@ const Gallery = () => {
               <div 
                 key={image.id} 
                 className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                data-aos="fade-up"
+                data-aos-delay={parseInt(image.id.replace(/\D/g,'')) * 50}
+                data-aos-duration="600"
               >
                 <div className="relative overflow-hidden aspect-square group">
                   <img
@@ -194,16 +210,26 @@ const Gallery = () => {
                         parent.appendChild(errorText);
                       }
                     }}
+                    data-aos={['fade-up', 'fade-right', 'fade-left', 'zoom-in', 'flip-left', 'zoom-in-up'][parseInt(image.id.replace(/\D/g,'')) % 6]}
+                    data-aos-duration="800"
                   />
                   {image.title && (
-                    <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div 
+                      className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                      data-aos="fade"
+                      data-aos-duration="400"
+                    >
                       <h3 className="text-white text-lg font-medium px-4 text-center">
                         {image.title}
                       </h3>
                     </div>
                   )}
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <div 
+                  className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"
+                  data-aos="fade-up"
+                  data-aos-duration="400"
+                >
                   <p className="text-white font-medium">{image.alt}</p>
                 </div>
               </div>

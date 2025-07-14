@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { toast } from "sonner";
 import { 
   Heart, 
   Shield, 
@@ -23,6 +24,50 @@ const WhyChooseUs = () => {
   const location = useLocation();
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [feedback, setFeedback] = useState({
+    name: '',
+    email: '',
+    rating: 0,
+    comment: ''
+  });
+  const [hoverRating, setHoverRating] = useState(0);
+
+  const handleFeedbackChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFeedback(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmitFeedback = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!feedback.name.trim() || !feedback.comment.trim()) {
+      toast.error('Please fill in all required fields');
+      return;
+    }
+    
+    if (feedback.rating === 0) {
+      toast.error('Please provide a rating');
+      return;
+    }
+    
+    // Here you would typically send the feedback to your backend
+    console.log('Feedback submitted:', feedback);
+    
+    // Show success message
+    toast.success('Thank you for your feedback!');
+    
+    // Reset form
+    setFeedback({
+      name: '',
+      email: '',
+      rating: 0,
+      comment: ''
+    });
+  };
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -304,18 +349,6 @@ const WhyChooseUs = () => {
               <Button
                 variant="outline"
                 size="icon"
-                onClick={nextTestimonial}
-                className="bg-white/20 border-white text-white hover:bg-white hover:text-primary"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-hospital-blue to-hospital-light-blue text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Experience the Difference in Healthcare

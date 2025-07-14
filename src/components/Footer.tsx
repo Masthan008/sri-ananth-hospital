@@ -10,16 +10,16 @@ const Footer = () => {
           {/* Hospital Info */}
           <div className="space-y-4">
             <div className="flex flex-col items-start space-y-3">
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-3">
                 <img 
                   src="/assets/images/logo.png" 
                   alt="Sri Ananth Multi Specialty Hospital" 
-                  className="h-12 w-auto"
+                  className="h-12 w-auto object-contain"
                 />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-primary">Sri Ananth</h3>
-                <p className="text-sm text-muted-foreground font-medium">Multi Specialty Hospital</p>
+                <div>
+                  <h3 className="text-2xl font-bold text-primary">Sri Ananth</h3>
+                  <p className="text-sm text-muted-foreground font-medium">Multi Specialty Hospital</p>
+                </div>
               </div>
             </div>
             <p className="text-sm text-muted-foreground">

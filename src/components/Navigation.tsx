@@ -28,11 +28,11 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <NavLink to="/" className="flex items-center">
-<div className="flex items-center">
+              <div className="flex items-center space-x-3">
                 <img 
                   src="/assets/images/logo.png" 
-                  alt="Sri Ananth Multispeciality Hospital" 
-                  className="h-[60px] w-auto object-contain p-1"
+                  alt="Sri Ananth Multi Specialty Hospital" 
+                  className="h-12 w-auto object-contain"
                   onError={(e) => {
                     // Fallback to text if image fails to load
                     const target = e.target as HTMLImageElement;
@@ -40,18 +40,18 @@ const Navigation = () => {
                     const fallback = document.createElement('div');
                     fallback.className = 'flex flex-col justify-center';
                     const text = document.createElement('div');
-                    text.className = 'text-primary font-bold text-xl';
+                    text.className = 'text-primary font-bold text-2xl';
                     text.textContent = 'Sri Ananth';
                     const subtext = document.createElement('div');
-                    subtext.className = 'text-xs text-muted-foreground';
+                    subtext.className = 'text-sm text-muted-foreground font-medium';
                     subtext.textContent = 'Multi Specialty Hospital';
                     fallback.appendChild(text);
                     fallback.appendChild(subtext);
                     target.parentNode?.insertBefore(fallback, target);
                   }}
                 />
-                <div className="ml-2">
-                  <div className="text-primary font-bold text-xl">Sri Ananth</div>
+                <div className="hidden md:block">
+                  <div className="text-primary font-bold text-2xl">Sri Ananth</div>
                   <div className="text-sm text-muted-foreground font-medium">Multi Specialty Hospital</div>
                 </div>
               </div>

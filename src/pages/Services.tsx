@@ -123,12 +123,23 @@ const Services = () => {
               >
                 <CardContent className="p-0">
                   {/* Image Container */}
-                  <div className="relative h-56 bg-gradient-to-br from-hospital-light-blue to-hospital-light-green flex items-center justify-center p-4">
-                    <img 
-                      src={service.image} 
-                      alt={service.title}
-                      className="max-w-full max-h-full object-contain"
-                    />
+                  <div className="relative pt-[60%] bg-gradient-to-br from-hospital-light-blue to-hospital-light-green overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center p-4">
+                      <img 
+                        src={service.image} 
+                        alt={service.title}
+                        className="w-full h-full object-contain max-w-[90%] max-h-[90%]"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.parentElement?.parentElement;
+                          if (parent) {
+                            parent.style.background = '#f3f4f6';
+                            parent.classList.add('flex', 'items-center', 'justify-center');
+                          }
+                        }}
+                      />
+                    </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent"></div>
                   </div>
                   

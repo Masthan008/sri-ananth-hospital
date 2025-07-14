@@ -89,7 +89,7 @@ const Services = () => {
       id: "general-surgery",
       icon: Scissors,
       image: "/lovable-uploads/SURGERY .png",
-      title: "Surgery",
+      title: "General Surgery",
       description: "Advanced surgical services across multiple specialties with minimally invasive techniques. Our surgical team ensures the highest standards of safety and patient care.",
       features: ["Laparoscopic Surgery", "Emergency Surgery", "Day Care Procedures", "Post-operative Care"]
     }

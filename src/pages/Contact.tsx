@@ -49,9 +49,8 @@ const Contact = () => {
       icon: Clock,
       title: "Operating Hours",
       details: [
-        "OPD: 9:00 AM - 8:00 PM",
-        "Emergency: 24/7 Available",
-        "All Days Including Sundays"
+        "OPD: 8:00 AM - 10:00 PM",
+        "Emergency: 24/7 Services Every Day"
       ]
     }
   ];

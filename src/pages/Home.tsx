@@ -135,11 +135,11 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Dr. Gireesha Reddy */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden animate-scale-in">
-              <div className="h-80 flex items-center justify-center bg-gray-50 p-4">
+              <div className="h-80 w-full flex items-center justify-center bg-gray-50 p-4 overflow-hidden">
                 <img 
                   src="/doctors/dr-gireesha.jpg" 
                   alt="Dr. Gireesha Reddy" 
-                  className="h-full w-auto object-contain"
+                  className="max-h-full max-w-full object-contain"
                 />
               </div>
               <div className="p-6">
@@ -162,11 +162,11 @@ const Home = () => {
 
             {/* Dr. Pavani */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden animate-scale-in" style={{animationDelay: '0.2s'}}>
-              <div className="h-80 flex items-center justify-center bg-gray-50 p-4">
+              <div className="h-80 w-full flex items-center justify-center bg-gray-50 p-4 overflow-hidden">
                 <img 
                   src="/doctors/dr-pavani.jpg" 
                   alt="Dr. Pavani" 
-                  className="h-full w-auto object-contain"
+                  className="max-h-full max-w-full object-contain"
                 />
               </div>
               <div className="p-6">
@@ -190,11 +190,11 @@ const Home = () => {
 
             {/* Dr. P Srujan Kumar */}
             <div className="md:col-span-2 lg:col-span-1 bg-white rounded-2xl shadow-lg overflow-hidden animate-scale-in" style={{animationDelay: '0.4s'}}>
-              <div className="h-80 flex items-center justify-center bg-gray-50 p-4">
+              <div className="h-80 w-full flex items-center justify-center bg-gray-50 p-4 overflow-hidden">
                 <img 
                   src="/doctors/dr-srujan.jpg" 
                   alt="Dr. P Srujan Kumar" 
-                  className="h-full w-auto object-contain"
+                  className="max-h-full max-w-full object-contain"
                 />
               </div>
               <div className="p-6">

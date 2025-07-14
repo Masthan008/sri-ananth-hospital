@@ -148,12 +148,28 @@ const About = () => {
       {/* Mission & Vision */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="animate-scale-in border-0 shadow-lg">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Mission Card */}
+            <Card className="animate-scale-in overflow-hidden border-0 shadow-lg group">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src="/about-sections/mission.jpg" 
+                  alt="Our Mission" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const parent = target.parentElement?.parentElement;
+                    if (parent) {
+                      const icon = document.createElement('div');
+                      icon.className = 'flex justify-center my-8';
+                      icon.innerHTML = '<Target class="w-12 h-12 text-primary" />';
+                      parent.insertBefore(icon, parent.firstChild);
+                    }
+                  }}
+                />
+              </div>
               <CardContent className="p-8 text-center">
-                <div className="flex justify-center mb-4">
-                  <Target className="w-12 h-12 text-primary" />
-                </div>
                 <h3 className="text-2xl font-bold text-primary mb-4">Our Mission</h3>
                 <p className="text-gray-600 leading-relaxed">
                   To provide accessible, affordable, and high-quality healthcare services 
@@ -163,11 +179,28 @@ const About = () => {
                 </p>
               </CardContent>
             </Card>
-            <Card className="animate-scale-in border-0 shadow-lg">
+
+            {/* Vision Card */}
+            <Card className="animate-scale-in overflow-hidden border-0 shadow-lg group">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src="/about-sections/vision.jpg" 
+                  alt="Our Vision" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const parent = target.parentElement?.parentElement;
+                    if (parent) {
+                      const icon = document.createElement('div');
+                      icon.className = 'flex justify-center my-8';
+                      icon.innerHTML = '<Eye class="w-12 h-12 text-hospital-green" />';
+                      parent.insertBefore(icon, parent.firstChild);
+                    }
+                  }}
+                />
+              </div>
               <CardContent className="p-8 text-center">
-                <div className="flex justify-center mb-4">
-                  <Eye className="w-12 h-12 text-hospital-green" />
-                </div>
                 <h3 className="text-2xl font-bold text-hospital-green mb-4">Our Vision</h3>
                 <p className="text-gray-600 leading-relaxed">
                   To be the leading healthcare provider in the region, recognized for our 

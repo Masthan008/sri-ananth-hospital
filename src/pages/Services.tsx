@@ -16,56 +16,56 @@ const Services = () => {
   const services = [
     {
       icon: Stethoscope,
-      image: "/lovable-uploads/4c91493c-f0de-4605-8016-60e65d3ff2c2.png",
+      image: "/lovable-uploads/GENERAL .png",
       title: "General Medicine",
       description: "Comprehensive primary healthcare services including routine check-ups, preventive care, and treatment of common medical conditions. Our experienced physicians provide personalized care for patients of all ages.",
       features: ["Routine Health Check-ups", "Chronic Disease Management", "Preventive Care", "Emergency Consultations"]
     },
     {
       icon: User,
-      image: "/lovable-uploads/24622503-bf08-48d1-b66d-700437fb5d1e.png",
+      image: "/lovable-uploads/DENTAL .png",
       title: "Dental",
       description: "Complete dental care services from routine cleanings to complex oral surgeries. Led by Dr. Gireesha Reddy, our dental department offers state-of-the-art treatments with the latest technology.",
       features: ["Oral Surgery", "Dental Implants", "Cosmetic Dentistry", "Emergency Dental Care"]
     },
     {
       icon: Activity,
-      image: "/lovable-uploads/22f26317-24f5-40df-8b34-5cc917675c7c.png",
+      image: "/lovable-uploads/UROLOGY .png",
       title: "Urology",
       description: "Specialized treatment for urological conditions affecting the urinary tract and male reproductive system. Our urologists provide both medical and surgical treatments with minimal invasive techniques.",
       features: ["Kidney Stone Treatment", "Prostate Care", "Urinary Tract Infections", "Male Infertility"]
     },
     {
       icon: Brain,
-      image: "/lovable-uploads/9d0caa44-2dfe-4dbc-b883-6866d40c4755.png",
+      image: "/lovable-uploads/NEUROLOGY .png",
       title: "Neurology",
       description: "Expert care for disorders of the nervous system including brain, spinal cord, and peripheral nerves. Our neurologists use advanced diagnostic tools and treatment methods.",
       features: ["Stroke Management", "Epilepsy Treatment", "Headache Disorders", "Neurological Rehabilitation"]
     },
     {
       icon: Heart,
-      image: "/lovable-uploads/479e7722-d8d2-46f2-b4e0-ee450275d1b3.png",
+      image: "/lovable-uploads/CARDIOLOGY .png",
       title: "Cardiology",
       description: "Comprehensive heart care services including diagnosis, treatment, and prevention of cardiovascular diseases. Our cardiac team provides both interventional and non-interventional treatments.",
       features: ["Heart Disease Prevention", "ECG & Echo Services", "Cardiac Rehabilitation", "Emergency Cardiac Care"]
     },
     {
       icon: Bone,
-      image: "/lovable-uploads/35aee091-9d91-49dc-ab00-ab03b996fbbf.png",
+      image: "/lovable-uploads/ORTHOPEDICS .png",
       title: "Orthopedics",
       description: "Treatment of musculoskeletal conditions including bones, joints, ligaments, and muscles. Our orthopedic specialists provide both surgical and non-surgical treatments.",
       features: ["Joint Replacement", "Fracture Treatment", "Sports Medicine", "Arthritis Management"]
     },
     {
       icon: Ear,
-      image: "/lovable-uploads/081cc719-2c5e-4de1-8a42-ce84c1a4ce0d.png",
+      image: "/lovable-uploads/AUDIOLOGY .png",
       title: "Audiology",
       description: "Complete hearing and balance care services including hearing assessments, hearing aid fittings, and treatment of ear-related disorders.",
       features: ["Hearing Tests", "Hearing Aid Services", "Tinnitus Treatment", "Balance Disorders"]
     },
     {
       icon: Scissors,
-      image: "/lovable-uploads/f928fe41-a7c9-4ded-9b52-a736d602f54f.png",
+      image: "/lovable-uploads/SURGERY .png",
       title: "Surgery",
       description: "Advanced surgical services across multiple specialties with minimally invasive techniques. Our surgical team ensures the highest standards of safety and patient care.",
       features: ["Laparoscopic Surgery", "Emergency Surgery", "Day Care Procedures", "Post-operative Care"]

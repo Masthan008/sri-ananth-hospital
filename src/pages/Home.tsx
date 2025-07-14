@@ -69,13 +69,14 @@ const Home = () => {
   };
 
   const specialties = [
-    { name: "Cardiology", image: "/lovable-uploads/CARDIOLOGY .png" },
-    { name: "Dental", image: "/lovable-uploads/DENTAL .png" },
-    { name: "General", image: "/lovable-uploads/GENERAL .png" },
-    { name: "Neurology", image: "/lovable-uploads/NEUROLOGY .png" },
-    { name: "Orthopedics", image: "/lovable-uploads/ORTHOPEDICS .png" },
-    { name: "Surgery", image: "/lovable-uploads/SURGERY .png" },
-    { name: "Urology", image: "/lovable-uploads/UROLOGY .png" },
+    { name: "Audiology", image: "/lovable-uploads/audiology.png" },
+    { name: "Cardiology", image: "/lovable-uploads/cardiology.png" },
+    { name: "Dental", image: "/lovable-uploads/dental.png" },
+    { name: "General", image: "/lovable-uploads/general.png" },
+    { name: "Neurology", image: "/lovable-uploads/neurology.png" },
+    { name: "Orthopedics", image: "/lovable-uploads/orthopedics.png" },
+    { name: "Surgery", image: "/lovable-uploads/surgery.png" },
+    { name: "Urology", image: "/lovable-uploads/urology.png" },
   ];
 
   return (

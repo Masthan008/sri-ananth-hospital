@@ -198,12 +198,14 @@ const Home = () => {
             <div className="md:col-span-2 lg:col-span-1 bg-white rounded-2xl shadow-lg overflow-hidden animate-scale-in" style={{animationDelay: '0.4s'}}>
               <div className="h-80 w-full overflow-hidden bg-gray-50">
                 <div className="w-full h-full flex items-center justify-center p-2">
-                  <img 
-                    src="/doctors/dr-srujan.jpg" 
-                    alt="Dr. P Srujan Kumar" 
-                    className="h-full w-full object-cover"
-                    style={{ objectPosition: 'top center' }}
-                  />
+                  <div className="w-full h-full overflow-hidden">
+                    <img 
+                      src="/doctors/dr-srujan.jpg" 
+                      alt="Dr. P Srujan Kumar" 
+                      className="w-full h-auto transform scale-90"
+                      style={{ objectFit: 'contain' }}
+                    />
+                  </div>
                 </div>
               </div>
               <div className="p-6">

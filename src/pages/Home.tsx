@@ -174,15 +174,25 @@ const Home = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUs.map((item, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow animate-scale-in border-0 shadow-md">
-                <CardContent className="p-6">
+              <Card key={index} className={`text-center hover:shadow-lg transition-all animate-scale-in border-0 shadow-md overflow-hidden ${index === 3 ? 'relative' : 'bg-white'}`}>
+                {index === 3 && (
+                  <div className="absolute inset-0 z-0">
+                    <div className="absolute inset-0 bg-black/30 z-0"></div>
+                    <img 
+                      src="/images/award-bg.jpg" 
+                      alt="Award background" 
+                      className="w-full h-full object-cover z-0"
+                    />
+                  </div>
+                )}
+                <CardContent className={`p-6 relative z-10 ${index === 3 ? 'text-white' : ''}`}>
                   <div className="flex justify-center mb-4">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                      <item.icon className="w-8 h-8 text-primary" />
+                    <div className={`w-16 h-16 ${index === 3 ? 'bg-white/20 backdrop-blur-sm' : 'bg-primary/10'} rounded-full flex items-center justify-center`}>
+                      <item.icon className={`w-8 h-8 ${index === 3 ? 'text-white' : 'text-primary'}`} />
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
+                  <h3 className={`text-xl font-semibold mb-3 ${index === 3 ? 'text-white' : ''}`}>{item.title}</h3>
+                  <p className={index === 3 ? 'text-white/90' : 'text-gray-600'}>{item.description}</p>
                 </CardContent>
               </Card>
             ))}

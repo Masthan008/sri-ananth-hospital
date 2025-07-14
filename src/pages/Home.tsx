@@ -136,7 +136,7 @@ const Home = () => {
             {/* Dr. Gireesha Reddy */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden animate-scale-in">
               <img 
-                src={doctorProfile} 
+                src="/doctors/dr-gireesha.jpg" 
                 alt="Dr. Gireesha Reddy" 
                 className="w-full h-80 object-cover"
               />
@@ -189,7 +189,7 @@ const Home = () => {
               <img 
                 src="/doctors/dr-srujan.jpg" 
                 alt="Dr. P Srujan Kumar" 
-                className="w-full h-80 object-cover"
+                className="w-full h-80 object-contain bg-gray-100 p-4"
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. P Srujan Kumar</h3>

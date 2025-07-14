@@ -29,17 +29,17 @@ const Contact = () => {
       icon: Phone,
       title: "Phone Numbers",
       details: [
-        "Main: +91 84999-95552",
-        "General: +91 90001-01155",
-        "Dr. Gireesha Reddy: +91 81061 21344"
+        "Main: +91 9966151626",
+        "General: +91 8499995554",
+        "Dr. Gireesha Reddy: +91 8106121344"
       ]
     },
     {
       icon: Mail,
       title: "Email Address",
       details: [
-        "support@sriananthhospital.com",
-        "appointments@sriananthhospital.com"
+        "Sri Ananth MultiSpecialtyHospital@gmail.com",
+        "Sri Ananth MultiSpecialtyHospital@gmail.com"
       ]
     },
     {

@@ -99,11 +99,11 @@ const Services = () => {
               >
                 <CardContent className="p-0">
                   {/* Image Container */}
-                  <div className="relative h-48 overflow-hidden bg-gradient-to-br from-hospital-light-blue to-hospital-light-green">
+                  <div className="relative h-56 bg-gradient-to-br from-hospital-light-blue to-hospital-light-green flex items-center justify-center p-4">
                     <img 
                       src={service.image} 
                       alt={service.title}
-                      className="w-full h-full object-contain p-4 transition-transform duration-300"
+                      className="max-w-full max-h-full object-contain"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent"></div>
                   </div>

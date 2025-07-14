@@ -41,22 +41,26 @@ const Home = () => {
     {
       icon: Clock,
       title: "24/7 Emergency Care",
-      description: "Round-the-clock medical emergency services with expert doctors and modern equipment."
+      description: "Round-the-clock medical emergency services with expert doctors and modern equipment.",
+      image: "/feature-images/emergency-care.jpg"
     },
     {
       icon: Shield,
       title: "Experienced Doctors",
-      description: "Highly qualified specialists with years of experience in their respective fields."
+      description: "Highly qualified specialists with years of experience in their respective fields.",
+      image: "/feature-images/doctors.jpg"
     },
     {
       icon: Heart,
       title: "Comprehensive Care",
-      description: "Complete healthcare solutions under one roof with state-of-the-art facilities."
+      description: "Complete healthcare solutions under one roof with state-of-the-art facilities.",
+      image: "/feature-images/comprehensive-care.jpg"
     },
     {
       icon: Award,
       title: "Award Winning",
-      description: "Recognized for excellence in healthcare with multiple medical awards and certifications."
+      description: "Recognized for excellence in healthcare with multiple medical awards and certifications.",
+      image: "/images/awards-bg.png"
     }
   ];
 
@@ -174,25 +178,34 @@ const Home = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUs.map((item, index) => (
-              <Card key={index} className={`text-center hover:shadow-lg transition-all animate-scale-in border-0 shadow-md overflow-hidden ${index === 3 ? 'relative' : 'bg-white'}`}>
-                {index === 3 && (
-                  <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-black/30 z-0"></div>
+              <Card key={index} className={`group text-center hover:shadow-xl transition-all animate-scale-in border-0 shadow-md overflow-hidden h-full flex flex-col ${index === 3 ? 'relative' : 'bg-white'}`}>
+                <div className="relative h-48 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 z-10"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
                     <img 
-                      src="/images/awards-bg.png" 
-                      alt="Award background" 
-                      className="w-full h-full object-cover z-0"
+                      src={item.image} 
+                      alt={item.title}
+                      className="min-w-full min-h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      onError={(e) => {
+                        // Fallback to a solid color if image fails to load
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const parent = target.parentElement?.parentElement;
+                        if (parent) {
+                          parent.style.background = index === 3 ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)' : '#f3f4f6';
+                        }
+                      }}
                     />
                   </div>
-                )}
-                <CardContent className={`p-6 relative z-10 ${index === 3 ? 'text-white' : ''}`}>
-                  <div className="flex justify-center mb-4">
-                    <div className={`w-16 h-16 ${index === 3 ? 'bg-white/20 backdrop-blur-sm' : 'bg-primary/10'} rounded-full flex items-center justify-center`}>
-                      <item.icon className={`w-8 h-8 ${index === 3 ? 'text-white' : 'text-primary'}`} />
+                </div>
+                <CardContent className="p-6 flex-1 flex flex-col">
+                  <div className="flex justify-center -mt-12 mb-4 relative z-20">
+                    <div className={`w-16 h-16 ${index === 3 ? 'bg-amber-100' : 'bg-white'} rounded-full flex items-center justify-center shadow-lg`}>
+                      <item.icon className={`w-8 h-8 ${index === 3 ? 'text-amber-600' : 'text-primary'}`} />
                     </div>
                   </div>
-                  <h3 className={`text-xl font-semibold mb-3 ${index === 3 ? 'text-white' : ''}`}>{item.title}</h3>
-                  <p className={index === 3 ? 'text-white/90' : 'text-gray-600'}>{item.description}</p>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-800">{item.title}</h3>
+                  <p className="text-gray-600 flex-1">{item.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -211,24 +224,30 @@ const Home = () => {
               <NavLink 
                 key={index} 
                 to={`/services#${specialty.id}`}
-                className="group block text-center animate-scale-in"
+                className="group block text-center animate-scale-in h-full"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 shadow-md h-full flex flex-col">
-                  <CardContent className="p-0 flex-1 flex flex-col">
-                    <div className="flex-1 relative overflow-hidden">
-                      <img 
-                        src={specialty.image} 
-                        alt={specialty.name} 
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                    </div>
-                    <h3 className="text-lg font-semibold p-4 text-center text-gray-800 group-hover:text-hospital-green transition-colors duration-300 bg-white">
-                      {specialty.name}
-                    </h3>
-                  </CardContent>
+                  <div className="aspect-square relative overflow-hidden">
+                    <img 
+                      src={specialty.image} 
+                      alt={specialty.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      onError={(e) => {
+                        // Fallback to a solid color if image fails to load
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent) {
+                          parent.style.background = '#f3f4f6';
+                        }
+                      }}
+                    />
+                  </div>
+                  <h3 className="text-lg font-semibold p-4 text-center text-gray-800 group-hover:text-hospital-green transition-colors duration-300 bg-white border-t border-gray-100">
+                    {specialty.name}
+                  </h3>
                 </Card>
-
               </NavLink>
             ))}
           </div>

@@ -61,6 +61,7 @@ const WhyChooseUs = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
   const features = [
     {
       id: "emergency-care",
@@ -296,19 +297,18 @@ const WhyChooseUs = () => {
           </div>
         </div>
       </section>
+      
+      {/* Scroll to Top Button */}
+      {showScrollToTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-hospital-blue text-white flex items-center justify-center shadow-lg hover:bg-hospital-blue-dark transition-colors z-50"
+          aria-label="Scroll to top"
+        >
+          <ChevronUp className="w-6 h-6" />
+        </button>
+      )}
     </div>
-
-    {/* Scroll to Top Button */}
-    {showScrollToTop && (
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-hospital-blue text-white flex items-center justify-center shadow-lg hover:bg-hospital-blue-dark transition-colors z-50"
-        aria-label="Scroll to top"
-      >
-        <ChevronUp className="w-6 h-6" />
-      </button>
-    )}
-  </div>
   );
 };
 

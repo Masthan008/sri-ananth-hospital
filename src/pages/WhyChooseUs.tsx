@@ -1,6 +1,7 @@
+import { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { NavLink } from "react-router-dom";
 import { 
   Heart, 
   Shield, 
@@ -12,40 +13,96 @@ import {
   HeartPulse,
   Star,
   CheckCircle2,
-  Phone
+  Phone,
+  ChevronUp
 } from "lucide-react";
 
 const WhyChooseUs = () => {
+  const location = useLocation();
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
+
+  // Handle smooth scrolling to sections when page loads with a hash
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          // Small delay to ensure the page has rendered
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        }
+      }
+    };
+
+    // Check for hash on initial load
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+
+    // Show/hide scroll to top button
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollToTop(true);
+      } else {
+        setShowScrollToTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [location]);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   const features = [
     {
+      id: "emergency-care",
+      icon: Clock,
+      title: "24/7 Emergency Care",
+      description: "Round-the-clock emergency care with rapid response teams and state-of-the-art facilities.",
+      fullDescription: "We provide 24/7 emergency medical services with highly trained professionals and modern diagnostic tools, ensuring immediate treatment for all critical cases. Our emergency department is equipped to handle all types of medical emergencies with the highest standards of care."
+    },
+    {
+      id: "expert-doctors",
       icon: Stethoscope,
       title: "Expert Medical Professionals",
-      description: "Our team of highly qualified doctors and healthcare professionals are dedicated to providing the best medical care."
+      description: "Our team of highly qualified doctors and healthcare professionals are dedicated to providing the best medical care.",
+      fullDescription: "Our doctors are top specialists in their fields with years of hands-on experience and training from reputed institutions. We carefully select our medical professionals based on their expertise, qualifications, and commitment to patient care."
     },
     {
+      id: "comprehensive-care",
       icon: HeartPulse,
-      title: "Compassionate Care",
-      description: "We treat our patients with empathy, respect, and understanding, ensuring a comfortable healthcare experience."
+      title: "Comprehensive Care",
+      description: "Complete healthcare solutions under one roof with state-of-the-art facilities.",
+      fullDescription: "We offer multi-specialty care, seamless coordination between departments, and integrated services under one roof. Our comprehensive approach ensures that all your healthcare needs are met efficiently and effectively."
     },
     {
-      icon: Clock,
-      title: "24/7 Emergency Services",
-      description: "Round-the-clock emergency care with rapid response teams and state-of-the-art facilities."
-    },
-    {
-      icon: Activity,
-      title: "Advanced Technology",
-      description: "Equipped with the latest medical technology for accurate diagnosis and effective treatment."
-    },
-    {
-      icon: Users,
-      title: "Patient-Centric Approach",
-      description: "Personalized treatment plans tailored to meet individual patient needs and preferences."
-    },
-    {
+      id: "award-winning",
       icon: Award,
       title: "Award-Winning Facility",
-      description: "Recognized for excellence in healthcare delivery and patient satisfaction."
+      description: "Recognized for excellence in healthcare delivery and patient satisfaction.",
+      fullDescription: "Sri Ananth Hospital has received several national awards for excellence in patient care and medical innovation. Our commitment to quality and patient satisfaction has been consistently recognized by healthcare authorities."
+    },
+    {
+      id: "advanced-technology",
+      icon: Activity,
+      title: "Advanced Technology",
+      description: "Equipped with the latest medical technology for accurate diagnosis and effective treatment.",
+      fullDescription: "Our hospital is equipped with state-of-the-art medical technology and equipment to provide accurate diagnoses and effective treatments. We continuously invest in the latest medical advancements to ensure the best possible outcomes for our patients."
+    },
+    {
+      id: "patient-centric",
+      icon: Users,
+      title: "Patient-Centric Approach",
+      description: "Personalized treatment plans tailored to meet individual patient needs and preferences.",
+      fullDescription: "We believe in treating the whole person, not just the illness. Our patient-centric approach focuses on personalized care plans, clear communication, and involving patients in their treatment decisions."
     }
   ];
 
@@ -105,24 +162,54 @@ const WhyChooseUs = () => {
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <Card 
-                  key={index} 
-                  className="text-center p-8 hover:shadow-xl transition-shadow duration-300 border-0 shadow-md"
-                  data-aos="fade-up"
-                  data-aos-delay={`${index * 100}`}
+                <a 
+                  key={feature.id}
+                  href={`#${feature.id}`}
+                  className="block hover:no-underline"
                 >
-                  <div className="w-16 h-16 rounded-full bg-hospital-light-blue/20 flex items-center justify-center mx-auto mb-6">
-                    <Icon className="w-8 h-8 text-hospital-blue" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 text-gray-800">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600">
-                    {feature.description}
-                  </p>
-                </Card>
+                  <Card 
+                    className="text-center p-8 hover:shadow-xl transition-all duration-300 border-0 shadow-md h-full hover:-translate-y-1"
+                    data-aos="fade-up"
+                    data-aos-delay={`${index * 100}`}
+                  >
+                    <div className="w-16 h-16 rounded-full bg-hospital-light-blue/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-hospital-blue/30 transition-colors">
+                      <Icon className="w-8 h-8 text-hospital-blue group-hover:text-hospital-blue-dark transition-colors" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-hospital-blue transition-colors">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600">
+                      {feature.description}
+                    </p>
+                  </Card>
+                </a>
               );
             })}
+          </div>
+          
+          {/* Detailed Sections for Deep Linking */}
+          <div className="mt-20 space-y-20">
+            {features.map((feature, index) => (
+              <section 
+                key={feature.id} 
+                id={feature.id}
+                className="scroll-mt-20 pt-20 -mt-20"
+              >
+                <div className="bg-white p-8 rounded-xl shadow-md">
+                  <div className="flex flex-col md:flex-row items-center gap-8">
+                    <div className="w-full md:w-1/3 flex justify-center">
+                      <div className="w-32 h-32 rounded-full bg-hospital-light-blue/20 flex items-center justify-center">
+                        <feature.icon className="w-12 h-12 text-hospital-blue" />
+                      </div>
+                    </div>
+                    <div className="w-full md:w-2/3 text-center md:text-left">
+                      <h2 className="text-3xl font-bold text-gray-800 mb-4">{feature.title}</h2>
+                      <p className="text-gray-600 text-lg">{feature.fullDescription}</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            ))}
           </div>
         </div>
       </section>
@@ -210,6 +297,18 @@ const WhyChooseUs = () => {
         </div>
       </section>
     </div>
+
+    {/* Scroll to Top Button */}
+    {showScrollToTop && (
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-hospital-blue text-white flex items-center justify-center shadow-lg hover:bg-hospital-blue-dark transition-colors z-50"
+        aria-label="Scroll to top"
+      >
+        <ChevronUp className="w-6 h-6" />
+      </button>
+    )}
+  </div>
   );
 };
 

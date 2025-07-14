@@ -100,26 +100,30 @@ const Home = () => {
 
   const whyChooseUs = [
     {
+      id: "emergency-care",
       icon: Clock,
       title: "24/7 Emergency Care",
       description: "Round-the-clock medical emergency services with expert doctors and modern equipment.",
       image: "/feature-images/EMERGENCY CARE .png"
     },
     {
+      id: "expert-doctors",
       icon: Shield,
-      title: "Experienced Doctors",
+      title: "Expert Medical Professionals",
       description: "Highly qualified specialists with years of experience in their respective fields.",
       image: "/feature-images/EXEPERINECED DOCTORS .png"
     },
     {
+      id: "comprehensive-care",
       icon: Heart,
       title: "Comprehensive Care",
       description: "Complete healthcare solutions under one roof with state-of-the-art facilities.",
       image: "/feature-images/COMPEHENSIVE CARE .png"
     },
     {
+      id: "award-winning",
       icon: Award,
-      title: "Award Winning",
+      title: "Award-Winning Facility",
       description: "Recognized for excellence in healthcare with multiple medical awards and certifications.",
       image: "/images/awards-bg.png",
       iconColor: "text-white"
@@ -307,58 +311,66 @@ const Home = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUs.map((item, index) => (
-              <Card 
-                key={index} 
-                className="group text-center hover:shadow-xl transition-all duration-300 border-0 shadow-md overflow-hidden h-full flex flex-col bg-white hover:-translate-y-2"
-                data-aos="fade-up"
-                data-aos-delay={`${index * 100}`}
-                data-aos-duration="800"
-                data-aos-easing="ease-out-cubic"
+              <NavLink 
+                key={item.id}
+                to={`/why-choose-us#${item.id}`}
+                className="block h-full hover:no-underline"
               >
-                <div className="relative h-48 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 z-10"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <img 
-                      src={item.image} 
-                      alt={item.title}
-                      className="min-w-full min-h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      onError={(e) => {
-                        // Fallback to a solid color if image fails to load
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                      }}
-                    />
-                  </div>
-                </div>
-                <CardContent className="p-6 flex-1 flex flex-col">
-                  <div 
-                    className="flex justify-center -mt-12 mb-4 relative z-20"
-                    data-aos="zoom-in"
-                    data-aos-delay={`${index * 100 + 200}`}
-                    data-aos-duration="600"
-                  >
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg bg-white group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                      <item.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
+                <Card 
+                  className="group text-center hover:shadow-xl transition-all duration-300 border-0 shadow-md overflow-hidden h-full flex flex-col bg-white hover:-translate-y-2"
+                  data-aos="fade-up"
+                  data-aos-delay={`${index * 100}`}
+                  data-aos-duration="800"
+                  data-aos-easing="ease-out-cubic"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 z-10"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <img 
+                        src={item.image} 
+                        alt={item.title}
+                        className="min-w-full min-h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        onError={(e) => {
+                          // Fallback to a solid color if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                        }}
+                      />
                     </div>
                   </div>
-                  <h3 
-                    className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-primary transition-colors duration-300"
-                    data-aos="fade-up"
-                    data-aos-delay={`${index * 100 + 100}`}
-                    data-aos-duration="600"
-                  >
-                    {item.title}
-                  </h3>
-                  <p 
-                    className="flex-1 text-gray-600"
-                    data-aos="fade-up"
-                    data-aos-delay={`${index * 100 + 150}`}
-                    data-aos-duration="600"
-                  >
-                    {item.description}
-                  </p>
-                </CardContent>
-              </Card>
+                  <CardContent className="p-6 flex-1 flex flex-col">
+                    <div 
+                      className="flex justify-center -mt-12 mb-4 relative z-20"
+                      data-aos="zoom-in"
+                      data-aos-delay={`${index * 100 + 200}`}
+                      data-aos-duration="600"
+                    >
+                      <div className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg bg-white group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                        <item.icon className={`w-8 h-8 ${item.iconColor || 'text-primary'} group-hover:text-white transition-colors duration-300`} />
+                      </div>
+                    </div>
+                    <h3 
+                      className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-primary transition-colors duration-300"
+                      data-aos="fade-up"
+                      data-aos-delay={`${index * 100 + 100}`}
+                      data-aos-duration="600"
+                    >
+                      {item.title}
+                    </h3>
+                    <p 
+                      className="flex-1 text-gray-600"
+                      data-aos="fade-up"
+                      data-aos-delay={`${index * 100 + 150}`}
+                      data-aos-duration="600"
+                    >
+                      {item.description}
+                    </p>
+                    <div className="mt-4 text-sm text-primary font-medium group-hover:underline">
+                      Learn more →
+                    </div>
+                  </CardContent>
+                </Card>
+              </NavLink>
             ))}
           </div>
         </div>

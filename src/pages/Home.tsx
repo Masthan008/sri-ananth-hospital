@@ -69,14 +69,14 @@ const Home = () => {
   };
 
   const specialties = [
-    { name: "General Medicine", image: "/lovable-uploads/GENERAL .png", id: "general-medicine" },
-    { name: "Dental", image: "/lovable-uploads/DENTAL .png", id: "dental" },
-    { name: "Urology", image: "/lovable-uploads/UROLOGY .png", id: "urology" },
-    { name: "Neurology", image: "/lovable-uploads/NEUROLOGY .png", id: "neurology" },
-    { name: "Cardiology", image: "/lovable-uploads/CARDIOLOGY .png", id: "cardiology" },
-    { name: "Orthopedics", image: "/lovable-uploads/ORTHOPEDICS .png", id: "orthopedics" },
-    { name: "Audiology", image: "/lovable-uploads/AUDIOLOGY .png", id: "audiology" },
-    { name: "General Surgery", image: "/lovable-uploads/SURGERY .png", id: "general-surgery" },
+    { name: "General Medicine", image: "/service-images/GENERAL MEDICINE.png", id: "general-medicine" },
+    { name: "Dental", image: "/service-images/DENTAL .png", id: "dental" },
+    { name: "Urology", image: "/service-images/UROOGY .png", id: "urology" },
+    { name: "Neurology", image: "/service-images/NEUROLOGY .png", id: "neurology" },
+    { name: "Cardiology", image: "/service-images/CARDIOLOGY .png", id: "cardiology" },
+    { name: "Orthopedics", image: "/service-images/ORTHOPEDICS .png", id: "orthopedics" },
+    { name: "Audiology", image: "/service-images/AUDIOLOGY .png", id: "audiology" },
+    { name: "General Surgery", image: "/service-images/GENERAL SURGERY .png", id: "general-surgery" },
   ];
 
 
@@ -179,7 +179,7 @@ const Home = () => {
                   <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-black/30 z-0"></div>
                     <img 
-                      src="/images/award-bg.jpg" 
+                      src="/images/awards-bg.png" 
                       alt="Award background" 
                       className="w-full h-full object-cover z-0"
                     />
@@ -214,20 +214,21 @@ const Home = () => {
                 className="group block text-center animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-0 shadow-md">
-                  <CardContent className="p-0">
-                    <div className="aspect-square flex items-center justify-center overflow-hidden">
+                <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 shadow-md h-full flex flex-col">
+                  <CardContent className="p-0 flex-1 flex flex-col">
+                    <div className="flex-1 relative overflow-hidden">
                       <img 
                         src={specialty.image} 
                         alt={specialty.name} 
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                     </div>
+                    <h3 className="text-lg font-semibold p-4 text-center text-gray-800 group-hover:text-hospital-green transition-colors duration-300 bg-white">
+                      {specialty.name}
+                    </h3>
                   </CardContent>
                 </Card>
-                <h3 className="text-lg font-semibold mt-4 text-gray-800 group-hover:text-hospital-green transition-colors duration-300">
-                  {specialty.name}
-                </h3>
+
               </NavLink>
             ))}
           </div>

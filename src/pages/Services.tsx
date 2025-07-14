@@ -86,7 +86,7 @@ const Services = () => {
       features: ["Hearing Tests", "Hearing Aid Services", "Tinnitus Treatment", "Balance Disorders"]
     },
     {
-      id: "surgery",
+      id: "general-surgery",
       icon: Scissors,
       image: "/lovable-uploads/SURGERY .png",
       title: "Surgery",

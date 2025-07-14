@@ -76,7 +76,7 @@ const Home = () => {
     { name: "Cardiology", image: "/lovable-uploads/CARDIOLOGY .png", id: "cardiology" },
     { name: "Orthopedics", image: "/lovable-uploads/ORTHOPEDICS .png", id: "orthopedics" },
     { name: "Audiology", image: "/lovable-uploads/AUDIOLOGY .png", id: "audiology" },
-    { name: "Surgery", image: "/lovable-uploads/SURGERY .png", id: "surgery" },
+    { name: "General Surgery", image: "/lovable-uploads/SURGERY .png", id: "general-surgery" },
   ];
 
 

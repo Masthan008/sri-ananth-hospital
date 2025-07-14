@@ -194,36 +194,7 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Dr. P Srujan Kumar */}
-            <div className="md:col-span-2 lg:col-span-1 bg-white rounded-2xl shadow-lg overflow-hidden animate-scale-in" style={{animationDelay: '0.4s'}}>
-              <div className="h-80 w-full overflow-hidden bg-gray-50">
-                <div className="w-full h-full flex items-center justify-center p-2">
-                  <div className="w-full h-full overflow-hidden">
-                    <img 
-                      src="/doctors/dr-srujan.jpg" 
-                      alt="Dr. P Srujan Kumar" 
-                      className="w-full h-auto transform scale-90"
-                      style={{ objectFit: 'contain' }}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. P Srujan Kumar</h3>
-                <p className="text-lg text-hospital-blue font-semibold mb-4">
-                  BDS, MDS
-                </p>
-                <p className="text-gray-600 mb-1 font-medium">Periodontist and Implantologist</p>
-                <div className="flex items-center space-x-4 mt-4">
-                  <Button asChild className="flex-1">
-                    <a href="tel:+918106121344" className="flex items-center justify-center space-x-2">
-                      <Phone className="w-4 h-4" />
-                      <span>Call Now</span>
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>

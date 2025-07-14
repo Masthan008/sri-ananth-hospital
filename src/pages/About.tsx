@@ -261,9 +261,9 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-left">
               <img 
-                src={doctorProfile} 
+                src="/doctors/chief-medical-officer.jpg" 
                 alt="Dr. Gireesha Reddy" 
-                className="w-full max-w-md mx-auto lg:mx-0 rounded-2xl shadow-2xl"
+                className="w-full max-w-md mx-auto lg:mx-0 rounded-2xl shadow-2xl object-cover h-[500px]"
               />
             </div>
             <div className="animate-slide-in-right">

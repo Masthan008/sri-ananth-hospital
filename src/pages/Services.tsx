@@ -103,7 +103,7 @@ const Services = () => {
                     <img 
                       src={service.image} 
                       alt={service.title}
-                      className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-contain p-4 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent"></div>
                   </div>

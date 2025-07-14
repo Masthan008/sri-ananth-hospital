@@ -305,21 +305,24 @@ const Home = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 shadow-md h-full flex flex-col">
-                  <div className="aspect-square relative overflow-hidden">
-                    <img 
-                      src={specialty.image} 
-                      alt={specialty.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      onError={(e) => {
-                        // Fallback to a solid color if image fails to load
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                        const parent = target.parentElement;
-                        if (parent) {
-                          parent.style.background = '#f3f4f6';
-                        }
-                      }}
-                    />
+                  <div className="relative pt-[100%] overflow-hidden">
+                    <div className="absolute inset-0">
+                      <img 
+                        src={specialty.image} 
+                        alt={specialty.name}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        onError={(e) => {
+                          // Fallback to a solid color if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.parentElement;
+                          if (parent) {
+                            parent.style.background = '#f3f4f6';
+                            parent.classList.add('flex', 'items-center', 'justify-center');
+                          }
+                        }}
+                      />
+                    </div>
                   </div>
                   <h3 className="text-lg font-semibold p-4 text-center text-gray-800 group-hover:text-hospital-green transition-colors duration-300 bg-white border-t border-gray-100">
                     {specialty.name}

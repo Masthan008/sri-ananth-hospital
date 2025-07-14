@@ -9,12 +9,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Hospital Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="flex items-center justify-center w-8 h-8 bg-primary rounded-lg">
-                <Heart className="w-5 h-5 text-primary-foreground" />
+            <div className="flex flex-col items-start space-y-3">
+              <div className="flex items-center space-x-2">
+                <img 
+                  src="/assets/images/logo.png" 
+                  alt="Sri Ananth Multi Specialty Hospital" 
+                  className="h-12 w-auto"
+                />
               </div>
               <div>
-                <h3 className="font-bold text-primary">Sri Ananth</h3>
+                <h3 className="text-xl font-bold text-primary">Sri Ananth</h3>
                 <p className="text-sm text-muted-foreground font-medium">Multi Specialty Hospital</p>
               </div>
             </div>

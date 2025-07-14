@@ -44,7 +44,7 @@ const Navigation = () => {
                     text.textContent = 'Sri Ananth';
                     const subtext = document.createElement('div');
                     subtext.className = 'text-xs text-muted-foreground';
-                    subtext.textContent = 'Multi-Specialty Hospital';
+                    subtext.textContent = 'Multi Specialty Hospital';
                     fallback.appendChild(text);
                     fallback.appendChild(subtext);
                     target.parentNode?.insertBefore(fallback, target);
@@ -52,7 +52,7 @@ const Navigation = () => {
                 />
                 <div className="ml-2">
                   <div className="text-primary font-bold text-xl">Sri Ananth</div>
-                  <div className="text-xs text-muted-foreground">Multi-Specialty Hospital</div>
+                  <div className="text-sm text-muted-foreground font-medium">Multi Specialty Hospital</div>
                 </div>
               </div>
             </NavLink>

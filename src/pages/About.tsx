@@ -98,7 +98,7 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Our Story</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Sri Ananth Multi-Specialty Hospital was established with a vision to provide 
+                  <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Sri Ananth Multi Specialty Hospital</h2> was established with a vision to provide 
                   world-class healthcare services to the people of Vikarabad and surrounding regions. 
                   Located in the heart of Telangana, our hospital has been serving the community 
                   with dedication and excellence.

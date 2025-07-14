@@ -15,7 +15,7 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="font-bold text-primary">Sri Ananth</h3>
-                <p className="text-xs text-muted-foreground">Multi-Specialty Hospital</p>
+                <p className="text-sm text-muted-foreground font-medium">Multi Specialty Hospital</p>
               </div>
             </div>
             <p className="text-sm text-muted-foreground">
@@ -80,7 +80,7 @@ const Footer = () => {
 
         <div className="border-t mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            © 2024 Sri Ananth Multi-Specialty Hospital. All rights reserved.
+            © 2024 Sri Ananth Multi Specialty Hospital. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 sm:mt-0">
             <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>

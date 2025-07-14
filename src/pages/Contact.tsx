@@ -135,7 +135,7 @@ const Contact = () => {
                   </div>
                   <div className="text-center">
                     <p className="text-gray-600 mb-4">
-                      Sri Ananth Multi-Specialty Hospital<br />
+                      Sri Ananth Multi Specialty Hospital<br />
                       H.No 4-1-315/3, Indirabai Colony<br />
                       Vikarabad, Telangana - 501101
                     </p>

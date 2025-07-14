@@ -126,40 +126,83 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Doctor Profile Section */}
+      {/* Doctors Profile Section */}
       <section className="py-16 bg-hospital-light-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-in-left">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12">
+            Meet Our Expert Doctors
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Dr. Gireesha Reddy */}
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden animate-scale-in">
               <img 
                 src={doctorProfile} 
                 alt="Dr. Gireesha Reddy" 
-                className="w-full max-w-md mx-auto lg:mx-0 rounded-2xl shadow-2xl"
+                className="w-full h-80 object-cover"
               />
-            </div>
-            <div className="animate-slide-in-right">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                Meet Our Chief Doctor
-              </h2>
-              <div className="bg-white p-8 rounded-2xl shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Dr. Gireesha Reddy</h3>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. Gireesha Reddy</h3>
                 <p className="text-lg text-hospital-blue font-semibold mb-4">
-                  BDS, MDS, (MBBS) – Oral & Maxillofacial Surgeon
+                  BDS, MDS [MBBS]
                 </p>
-                <p className="text-gray-600 mb-6">
-                  With over 15 years of experience in oral and maxillofacial surgery, 
-                  Dr. Gireesha Reddy leads our dental department with expertise in complex 
-                  surgical procedures and patient care.
-                </p>
+                <p className="text-gray-600 mb-1 font-medium">Sri Ananth Multispeciality Hospital</p>
+                <p className="text-gray-500 text-sm mb-4">Managing Director</p>
                 <div className="flex items-center space-x-4">
-                  <Button asChild>
-                    <a href="tel:+918106121344" className="flex items-center space-x-2">
+                  <Button asChild className="flex-1">
+                    <a href="tel:+918106121344" className="flex items-center justify-center space-x-2">
                       <Phone className="w-4 h-4" />
-                      <span>+91 81061 21344</span>
+                      <span>Call Now</span>
                     </a>
                   </Button>
-                  <Button variant="outline" asChild>
-                    <NavLink to="/contact">Book Consultation</NavLink>
+                </div>
+              </div>
+            </div>
+
+            {/* Dr. Pavani */}
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden animate-scale-in" style={{animationDelay: '0.2s'}}>
+              <img 
+                src="/doctors/dr-pavani.jpg" 
+                alt="Dr. Pavani" 
+                className="w-full h-80 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. Pavani</h3>
+                <p className="text-lg text-hospital-blue font-semibold mb-4">
+                  MBBS, DGO, DNB<br />
+                  DRM (Germany)<br />
+                  Diploma in Reproductive Medicine
+                </p>
+                <p className="text-gray-600 mb-1 font-medium">Gynecologist and Infertility Specialist</p>
+                <div className="flex items-center space-x-4 mt-4">
+                  <Button asChild className="flex-1">
+                    <a href="tel:+918106121344" className="flex items-center justify-center space-x-2">
+                      <Phone className="w-4 h-4" />
+                      <span>Call Now</span>
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Dr. P Srujan Kumar */}
+            <div className="md:col-span-2 lg:col-span-1 bg-white rounded-2xl shadow-lg overflow-hidden animate-scale-in" style={{animationDelay: '0.4s'}}>
+              <img 
+                src="/doctors/dr-srujan.jpg" 
+                alt="Dr. P Srujan Kumar" 
+                className="w-full h-80 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. P Srujan Kumar</h3>
+                <p className="text-lg text-hospital-blue font-semibold mb-4">
+                  BDS, MDS
+                </p>
+                <p className="text-gray-600 mb-1 font-medium">Periodontist and Implantologist</p>
+                <div className="flex items-center space-x-4 mt-4">
+                  <Button asChild className="flex-1">
+                    <a href="tel:+918106121344" className="flex items-center justify-center space-x-2">
+                      <Phone className="w-4 h-4" />
+                      <span>Call Now</span>
+                    </a>
                   </Button>
                 </div>
               </div>

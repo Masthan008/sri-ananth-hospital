@@ -420,51 +420,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16 bg-primary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 animate-fade-in">
-            What Our Patients Say
-          </h2>
-          <div className="relative">
-            <Card className="bg-white/95 backdrop-blur animate-scale-in">
-              <CardContent className="p-8">
-                <div className="flex justify-center mb-4">
-                  {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-lg text-gray-700 mb-6 italic">
-                  "{testimonials[currentTestimonial].text}"
-                </p>
-                <h4 className="text-xl font-semibold text-primary">
-                  {testimonials[currentTestimonial].name}
-                </h4>
-              </CardContent>
-            </Card>
-            
-            {/* Navigation Buttons */}
-            <div className="flex justify-center space-x-4 mt-8">
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={prevTestimonial}
-                className="bg-white/20 border-white text-white hover:bg-white hover:text-primary"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={nextTestimonial}
-                className="bg-white/20 border-white text-white hover:bg-white hover:text-primary"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Patient Feedback Section */}
       <section className="py-16 bg-gray-50">

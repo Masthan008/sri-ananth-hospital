@@ -14,12 +14,23 @@ import {
   Star,
   CheckCircle2,
   Phone,
-  ChevronUp
+  ChevronUp,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 
 const WhyChooseUs = () => {
   const location = useLocation();
   const [showScrollToTop, setShowScrollToTop] = useState(false);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
 
   // Handle smooth scrolling to sections when page loads with a hash
   useEffect(() => {
@@ -257,38 +268,48 @@ const WhyChooseUs = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              What Our Patients Say
-            </h2>
-            <div className="w-24 h-1 bg-hospital-blue mx-auto"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card 
-                key={index} 
-                className="p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
-                data-aos="fade-up"
-                data-aos-delay={`${index * 100}`}
-              >
-                <div className="flex items-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star 
-                      key={i} 
-                      className={`w-5 h-5 ${i < testimonial.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
-                    />
+      <section className="py-16 bg-primary">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 animate-fade-in">
+            What Our Patients Say
+          </h2>
+          <div className="relative">
+            <Card className="bg-white/95 backdrop-blur animate-scale-in">
+              <CardContent className="p-8">
+                <div className="flex justify-center mb-4">
+                  {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
+                    <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4 italic">"{testimonial.content}"</p>
-                <div className="font-medium text-gray-800">
-                  {testimonial.name}
-                  <span className="block text-sm text-gray-500 font-normal">{testimonial.role}</span>
-                </div>
-              </Card>
-            ))}
+                <p className="text-lg text-gray-700 mb-6 italic">
+                  "{testimonials[currentTestimonial].content}"
+                </p>
+                <h4 className="text-xl font-semibold text-primary">
+                  {testimonials[currentTestimonial].name}
+                  <span className="block text-sm text-gray-500 font-normal">{testimonials[currentTestimonial].role}</span>
+                </h4>
+              </CardContent>
+            </Card>
+            
+            {/* Navigation Buttons */}
+            <div className="flex justify-center space-x-4 mt-8">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={prevTestimonial}
+                className="bg-white/20 border-white text-white hover:bg-white hover:text-primary"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={nextTestimonial}
+                className="bg-white/20 border-white text-white hover:bg-white hover:text-primary"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </Button>
+            </div>
           </div>
         </div>
       </section>

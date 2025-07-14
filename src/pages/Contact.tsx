@@ -37,7 +37,12 @@ const Contact = () => {
       icon: Mail,
       title: "Email Address",
       details: [
-        "SriAnanthMultiSpecialtyHospital@gmail.com"
+        <a key="email1" href="mailto:SriAnanthMultiSpecialtyHospital@gmail.com" className="break-words hover:text-primary transition-colors">
+          SriAnanthMultiSpecialtyHospital@gmail.com
+        </a>,
+        <a key="email2" href="mailto:sriananthdentalhospital@gmail.com" className="break-words hover:text-primary transition-colors">
+          sriananthdentalhospital@gmail.com
+        </a>
       ]
     },
     {
@@ -94,9 +99,11 @@ const Contact = () => {
                     </div>
                   </div>
                   <h3 className="text-lg font-semibold mb-3 text-primary">{info.title}</h3>
-                  <div className="space-y-1">
+                  <div className="space-y-2">
                     {info.details.map((detail, detailIndex) => (
-                      <p key={detailIndex} className="text-gray-600 text-sm">{detail}</p>
+                      <div key={detailIndex} className="text-gray-600 text-sm break-words">
+                        {detail}
+                      </div>
                     ))}
                   </div>
                 </CardContent>

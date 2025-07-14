@@ -3,20 +3,18 @@
 @tailwind utilities;
 
 /* Font Hierarchy */
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-  font-family: 'Inter', 'Poppins', 'Roboto', 'Merriweather', sans-serif;
+  @apply text-gray-900 leading-relaxed;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
-}
-
-p, span, li, input, textarea, button, select {
-  font-family: 'Roboto', sans-serif;
-}
-
-blockquote, q, .quote {
-  font-family: 'Merriweather', serif;
+  @apply font-semibold tracking-tight;
 }
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 

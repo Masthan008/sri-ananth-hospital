@@ -26,8 +26,8 @@ const Footer = () => {
               Caring for Health, Caring for You. Providing comprehensive healthcare services with compassion and excellence.
             </p>
             <div className="flex items-center space-x-2 whitespace-nowrap">
-              <Clock className="w-5 h-5 text-red-600 flex-shrink-0" />
-              <span className="text-lg font-semibold text-red-600">24/7 Emergency Service Everyday</span>
+              <Clock className="w-4 h-4 text-red-600 flex-shrink-0" />
+              <span className="text-sm font-medium text-red-600">24/7 Emergency Service Everyday</span>
             </div>
           </div>
 

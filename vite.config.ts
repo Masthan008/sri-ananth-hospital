@@ -16,10 +16,21 @@ export default defineConfig(({ mode }) => ({
       babel: {
         plugins: ['@emotion/babel-plugin'],
       },
+      jsxRuntime: 'automatic',
     }),
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
+  optimizeDeps: {
+    esbuildOptions: {
+      jsx: 'automatic',
+    },
+  },
+  build: {
+    rollupOptions: {
+      external: ['@emotion/react/jsx-runtime'],
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

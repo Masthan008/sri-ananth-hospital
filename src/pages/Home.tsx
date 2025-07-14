@@ -299,12 +299,23 @@ const Home = () => {
       {/* Why Choose Us */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in">
+          <h2 
+            className="text-3xl md:text-4xl font-bold text-primary text-center mb-12"
+            data-aos="fade-up"
+            data-aos-duration="800"
+          >
             Why Choose Sri Ananth Hospital?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUs.map((item, index) => (
-              <Card key={index} className="group text-center hover:shadow-xl transition-all animate-scale-in border-0 shadow-md overflow-hidden h-full flex flex-col bg-white">
+              <Card 
+                key={index} 
+                className="group text-center hover:shadow-xl transition-all duration-300 border-0 shadow-md overflow-hidden h-full flex flex-col bg-white hover:-translate-y-2"
+                data-aos="fade-up"
+                data-aos-delay={`${index * 100}`}
+                data-aos-duration="800"
+                data-aos-easing="ease-out-cubic"
+              >
                 <div className="relative h-48 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 z-10"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -321,13 +332,32 @@ const Home = () => {
                   </div>
                 </div>
                 <CardContent className="p-6 flex-1 flex flex-col">
-                  <div className="flex justify-center -mt-12 mb-4 relative z-20">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg bg-white">
-                      <item.icon className="w-8 h-8 text-primary" />
+                  <div 
+                    className="flex justify-center -mt-12 mb-4 relative z-20"
+                    data-aos="zoom-in"
+                    data-aos-delay={`${index * 100 + 200}`}
+                    data-aos-duration="600"
+                  >
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg bg-white group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                      <item.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-gray-800">{item.title}</h3>
-                  <p className="flex-1 text-gray-600">{item.description}</p>
+                  <h3 
+                    className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-primary transition-colors duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay={`${index * 100 + 100}`}
+                    data-aos-duration="600"
+                  >
+                    {item.title}
+                  </h3>
+                  <p 
+                    className="flex-1 text-gray-600"
+                    data-aos="fade-up"
+                    data-aos-delay={`${index * 100 + 150}`}
+                    data-aos-duration="600"
+                  >
+                    {item.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}

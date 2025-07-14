@@ -80,7 +80,7 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
               <Phone className="w-4 h-4" />
-              <span>+91 84999-95552</span>
+              <a href="tel:+919966151626" className="hover:text-primary transition-colors">+91 9966151626</a>
             </div>
             <Button 
               className="bg-hospital-green hover:bg-hospital-green/90 transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -124,7 +124,7 @@ const Navigation = () => {
             <div className="px-4 pt-4 border-t">
               <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-4">
                 <Phone className="w-4 h-4" />
-                <span>+91 84999-95552</span>
+                <a href="tel:+919966151626" className="hover:text-primary transition-colors">+91 9966151626</a>
               </div>
               <Button 
                 className="w-full bg-hospital-green hover:bg-hospital-green/90"

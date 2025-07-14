@@ -250,7 +250,7 @@ const About = () => {
                       }}
                     />
                   </div>
-                  <h3 className="text-lg font-semibold mb-3">{value.title}</h3>
+                  <h3 className="text-lg font-semibold mb-3 text-primary">{value.title}</h3>
                   <p className="text-gray-600 text-sm">{value.description}</p>
                 </CardContent>
               </Card>

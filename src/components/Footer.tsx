@@ -25,9 +25,9 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground">
               Caring for Health, Caring for You. Providing comprehensive healthcare services with compassion and excellence.
             </p>
-            <div className="flex items-center space-x-2 text-sm">
-              <Clock className="w-4 h-4 text-primary" />
-              <span className="text-muted-foreground">24/7 Emergency Service</span>
+            <div className="flex items-center space-x-2">
+              <Clock className="w-5 h-5 text-red-600" />
+              <span className="text-lg font-semibold text-red-600">24/7 Emergency Service Available</span>
             </div>
           </div>
 

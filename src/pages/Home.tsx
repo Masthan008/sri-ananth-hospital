@@ -109,11 +109,15 @@ const Home = () => {
       >
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-            Caring for Health, Caring for You
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in leading-tight">
+            Caring for Health,<br />
+            <span className="text-hospital-blue">Caring for You</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 animate-slide-in-left">
-            24/7 Emergency Service Available
+          <p className="text-2xl md:text-3xl font-semibold mb-8 animate-slide-in-left text-white bg-red-600/90 inline-block px-6 py-2 rounded-full">
+            <span className="flex items-center justify-center space-x-2">
+              <Clock className="w-6 h-6" />
+              <span>24/7 Emergency Service Available</span>
+            </span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-in-right">
             <Button size="lg" asChild className="text-lg px-8 py-3">
@@ -200,14 +204,18 @@ const Home = () => {
                 <div className="w-full h-full flex items-center justify-center p-2">
                   <img 
                     src="/doctors/dr-srujan.jpg" 
-                    alt="Dr. Srujan Kumar" 
+                    alt="DR P SRUJAN KUMAR" 
                     className="h-full w-full object-cover"
                     style={{ objectPosition: 'top center' }}
                   />
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Dr. Srujan Kumar</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">DR P SRUJAN KUMAR</h3>
+                <p className="text-lg text-hospital-blue font-semibold mb-4">
+                  BDS MDS<br />
+                  <span className="text-gray-600">PERIODONTIST AND IMPLANTOLOGIST</span>
+                </p>
                 <p className="text-gray-600 mb-1 font-medium">Consultant Physician</p>
                 <p className="text-gray-500 text-sm mb-4">General Medicine Specialist</p>
                 <div className="flex items-center space-x-4">

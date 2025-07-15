@@ -15,6 +15,15 @@ import FAQs from "./pages/FAQs";
 import Contact from "./pages/Contact";
 import News from "./pages/News";
 import NotFound from "./pages/NotFound";
+import OurTeam from "./pages/our-team";
+import PatientInfo from "./pages/patient-info";
+import VisitingHours from "./pages/visiting-hours";
+import Insurance from "./pages/insurance";
+import Billing from "./pages/billing";
+import Testimonials from "./pages/testimonials";
+import Appointment from "./pages/appointment";
+import Doctors from "./pages/doctors";
+import Locations from "./pages/locations";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +45,19 @@ const App = () => (
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/faqs" element={<FAQs />} />
               <Route path="/contact" element={<Contact />} />
+              
+              {/* New Routes */}
+              <Route path="/our-team" element={<OurTeam />} />
+              <Route path="/patient-info" element={<PatientInfo />} />
+              <Route path="/visiting-hours" element={<VisitingHours />} />
+              <Route path="/insurance" element={<Insurance />} />
+              <Route path="/billing" element={<Billing />} />
+              <Route path="/testimonials" element={<Testimonials />} />
+              <Route path="/appointment" element={<Appointment />} />
+              <Route path="/doctors" element={<Doctors />} />
+              <Route path="/locations" element={<Locations />} />
+              
+              {/* Catch-all route */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

@@ -17,36 +17,39 @@ const Navigation = () => {
       groupName: "About",
       items: [
         { name: "About Us", path: "/about" },
+        { name: "Our Doctors", path: "/our-team" },
         { name: "Why Choose Us", path: "/why-choose-us" },
-        { name: "Our Team", path: "/our-team" },
       ]
     },
     {
       groupName: "Services",
       items: [
         { name: "All Services", path: "/services" },
-        { name: "Emergency Care", path: "/services/emergency" },
-        { name: "Cardiology", path: "/services/cardiology" },
-        { name: "Orthopedics", path: "/services/orthopedics" },
-        { name: "Neurology", path: "/services/neurology" },
+        { name: "General Medicine", path: "/services/general-medicine" },
+        { name: "Dental Care", path: "/services/dental" },
+        { name: "Gynecology", path: "/services/gynecology" },
+        { name: "Urology", path: "/services/urology" },
+        { name: "Pulmonology", path: "/services/pulmonology" },
+        { name: "Pediatrics", path: "/services/pediatrics" },
+        { name: "Infertility", path: "/services/infertility" },
       ]
     },
     {
       groupName: "Patient Care",
       items: [
+        { name: "Appointments", path: "/appointment" },
         { name: "Patient Information", path: "/patient-info" },
         { name: "Visiting Hours", path: "/visiting-hours" },
         { name: "Insurance", path: "/insurance" },
-        { name: "Billing", path: "/billing" },
       ]
     },
     {
       groupName: "Resources",
       items: [
-        { name: "News & Blog", path: "/news" },
         { name: "Gallery", path: "/gallery" },
-        { name: "FAQs", path: "/faqs" },
         { name: "Testimonials", path: "/testimonials" },
+        { name: "FAQs", path: "/faqs" },
+        { name: "Contact Us", path: "/contact" },
       ]
     },
     {

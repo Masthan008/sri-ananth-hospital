@@ -2,14 +2,13 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
-  Heart, 
-  Brain, 
   Stethoscope, 
-  Bone, 
   Activity,
   User,
-  Ear,
-  Scissors
+  Heart,
+  Baby,
+  HeartPulse,
+  Pill
 } from "lucide-react";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -25,14 +24,15 @@ const Services = () => {
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-      }, 100); // Small delay to ensure the page has rendered
+      }, 100);
     }
   }, [location]);
+
   const services = [
     {
       id: "general-medicine",
       icon: Stethoscope,
-      image: "/lovable-uploads/GENERAL .png",
+      image: "/service-images/GENERAL MEDICINE.png",
       title: "General Medicine",
       description: "Comprehensive primary healthcare services including routine check-ups, preventive care, and treatment of common medical conditions. Our experienced physicians provide personalized care for patients of all ages.",
       features: ["Routine Health Check-ups", "Chronic Disease Management", "Preventive Care", "Emergency Consultations"]
@@ -40,98 +40,50 @@ const Services = () => {
     {
       id: "dental",
       icon: User,
-      image: "/lovable-uploads/DENTAL .png",
-      title: "Dental",
-      description: "Complete dental care services from routine cleanings to complex oral surgeries. Led by Dr. Gireesha Reddy, our dental department offers state-of-the-art treatments with the latest technology.",
-      features: ["Oral Surgery", "Dental Implants", "Cosmetic Dentistry", "Emergency Dental Care"]
+      image: "/service-images/DENTAL .png",
+      title: "Dental Care",
+      description: "Complete dental care services from routine cleanings to complex oral surgeries. Led by Dr. Gireesha Reddy and Dr. Srujan Kumar, our dental department offers state-of-the-art treatments with the latest technology.",
+      features: ["Dental Implants", "Cosmetic Dentistry", "Periodontal Treatment", "Emergency Dental Care"]
+    },
+    {
+      id: "gynecology",
+      icon: Heart,
+      image: "/service-images/GYNECOLOGY.png",
+      title: "Gynecology",
+      description: "Comprehensive women's health services including routine check-ups, prenatal care, and treatment of gynecological conditions. Led by Dr. Pavani, our gynecology department provides expert care for women of all ages.",
+      features: ["Routine Check-ups", "Prenatal & Postnatal Care", "Family Planning", "Menopause Management"]
     },
     {
       id: "urology",
       icon: Activity,
-      image: "/lovable-uploads/UROLOGY .png",
+      image: "/service-images/UROLOGY.png",
       title: "Urology",
       description: "Specialized treatment for urological conditions affecting the urinary tract and male reproductive system. Our urologists provide both medical and surgical treatments with minimal invasive techniques.",
       features: ["Kidney Stone Treatment", "Prostate Care", "Urinary Tract Infections", "Male Infertility"]
     },
     {
-      id: "cardiology",
-      icon: Heart,
-      image: "/lovable-uploads/CARDIOLOGY .png",
-      title: "Cardiology",
-      description: "Comprehensive heart care services including diagnosis, treatment, and prevention of cardiovascular diseases. Our cardiac team provides both interventional and non-interventional treatments.",
-      features: ["Heart Disease Prevention", "ECG & Echo Services", "Cardiac Rehabilitation", "Emergency Cardiac Care"]
-    },
-    {
-      id: "orthopedics",
-      icon: Bone,
-      image: "/lovable-uploads/ORTHOPEDICS .png",
-      title: "Orthopedics",
-      description: "Treatment of musculoskeletal conditions including bones, joints, ligaments, and muscles. Our orthopedic specialists provide both surgical and non-surgical treatments.",
-      features: ["Joint Replacement", "Fracture Treatment", "Sports Medicine", "Arthritis Management"]
-    },
-    {
-      id: "audiology",
-      icon: Ear,
-      image: "/lovable-uploads/AUDIOLOGY .png",
-      title: "Audiology",
-      description: "Complete hearing and balance care services including hearing assessments, hearing aid fittings, and treatment of ear-related disorders.",
-      features: ["Hearing Tests", "Hearing Aid Services", "Tinnitus Treatment", "Balance Disorders"]
-    },
-    {
-      id: "general-surgery",
-      icon: Scissors,
-      image: "/lovable-uploads/SURGERY .png",
-      title: "General Surgery",
-      description: "Advanced surgical services across multiple specialties with minimally invasive techniques. Our surgical team ensures the highest standards of safety and patient care.",
-      features: ["Laparoscopic Surgery", "Emergency Surgery", "Day Care Procedures", "Post-operative Care"]
-    },
-    {
-      id: "gynecology",
-      icon: Heart,
-      image: "/lovable-uploads/GYNECOLOGY.png",
-      title: "Gynecology",
-      description: "Comprehensive women's health services including routine check-ups, prenatal care, and treatment of gynecological conditions. Our expert gynecologists provide personalized care for women of all ages.",
-      features: ["Routine Check-ups", "Prenatal & Postnatal Care", "Family Planning", "Menopause Management"]
-    },
-    {
       id: "pulmonology",
       icon: Activity,
-      image: "/lovable-uploads/PULMONOLOGY.png",
+      image: "/service-images/PULMONOLGY.png",
       title: "Pulmonology",
-      description: "Specialized care for respiratory disorders and lung-related conditions. Our pulmonologists use advanced diagnostic tools to provide effective treatment for asthma, COPD, and other lung diseases.",
+      description: "Specialized care for respiratory disorders including asthma, COPD, and sleep apnea. Our pulmonologists provide comprehensive diagnosis and treatment for all lung-related conditions.",
       features: ["Asthma Management", "COPD Treatment", "Sleep Studies", "Lung Function Tests"]
     },
     {
       id: "pediatrics",
-      icon: Heart,
-      image: "/lovable-uploads/PEDIATRICS.png",
+      icon: Baby,
+      image: "/service-images/PEDIATRICS.png",
       title: "Pediatrics",
-      description: "Compassionate healthcare services for infants, children, and adolescents. Our pediatricians provide preventive care, immunizations, and treatment for childhood illnesses.",
-      features: ["Well-baby Check-ups", "Vaccinations", "Growth Monitoring", "Childhood Illness Care"]
-    },
-    {
-      id: "critical-care",
-      icon: Heart,
-      image: "/lovable-uploads/CRITICAL CARE.png",
-      title: "Critical Care",
-      description: "24/7 specialized care for critically ill patients in our state-of-the-art ICU. Our critical care team provides advanced life support and monitoring for patients with life-threatening conditions.",
-      features: ["24/7 Monitoring", "Ventilator Support", "Hemodynamic Monitoring", "Post-operative Care"]
+      description: "Specialized healthcare for infants, children, and adolescents. Our pediatricians provide compassionate care in a child-friendly environment.",
+      features: ["Well-baby Check-ups", "Vaccinations", "Childhood Illnesses", "Growth & Development Monitoring"]
     },
     {
       id: "infertility",
-      icon: Heart,
-      image: "/lovable-uploads/INFERTILITY.png",
+      icon: HeartPulse,
+      image: "/service-images/INFERTILITY.png",
       title: "Infertility",
-      description: "Comprehensive fertility evaluation and treatment options for couples facing conception challenges. Our fertility specialists offer personalized treatment plans including IUI, IVF, and other assisted reproductive technologies.",
-      features: ["Fertility Assessment", "IUI/IVF", "Fertility Preservation", "Hormonal Treatment"]
-    },
-    {
-      id: "maxillofacial",
-      icon: User,
-      image: "/lovable-uploads/MAXILLOFACIAL.png",
-      title: "Maxillofacial Surgery",
-      description: "Specialized surgical treatment for diseases, injuries, and defects in the head, neck, face, jaws, and hard and soft tissues of the oral and maxillofacial region.",
-      features: ["Dental Implants", "Jaw Surgery", "Facial Trauma Care", "Corrective Jaw Surgery"]
+      description: "Comprehensive fertility evaluation and treatment options for couples facing conception challenges. Led by Dr. Pavani, our fertility specialists provide personalized care and advanced reproductive technologies.",
+      features: ["Fertility Testing", "IUI/IVF", "Fertility Preservation", "PCOS Management"]
     }
   ];
 

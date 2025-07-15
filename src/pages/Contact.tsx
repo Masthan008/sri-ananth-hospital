@@ -102,13 +102,12 @@ const Contact = () => {
   const departments = [
     "General Medicine",
     "Dental - Dr. Gireesha Reddy",
-    "Cardiology",
-    "Neurology",
-    "Orthopedics",
+    "Dental - Dr. Srujan Kumar",
+    "Gynecology - Dr. Pavani",
     "Urology",
-    "Audiology",
-    "Surgery",
-    "Emergency"
+    "Pulmonology",
+    "Pediatrics",
+    "Infertility"
   ];
 
   return (

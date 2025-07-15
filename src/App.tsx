@@ -13,6 +13,7 @@ import WhyChooseUs from "./pages/WhyChooseUs";
 import Gallery from "./pages/Gallery";
 import FAQs from "./pages/FAQs";
 import Contact from "./pages/Contact";
+import News from "./pages/News";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/why-choose-us" element={<WhyChooseUs />} />
+              <Route path="/news" element={<News />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/faqs" element={<FAQs />} />
               <Route path="/contact" element={<Contact />} />

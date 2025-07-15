@@ -381,21 +381,56 @@ const Home = () => {
 
 
 
-      {/* CTA Section */}
-      <section className="py-16 bg-hospital-green">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 animate-fade-in">
-            Ready to Schedule Your Appointment?
-          </h2>
-          <p className="text-xl text-white/90 mb-8 animate-slide-in-left">
-            Our medical experts are ready to provide you with the best healthcare services.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-in-right">
-            <Button size="lg" variant="outline" asChild className="bg-white text-hospital-green border-white hover:bg-gray-100">
-              <NavLink to="/contact">Book Appointment</NavLink>
-            </Button>
-            <Button size="lg" variant="outline" asChild className="bg-transparent border-white text-white hover:bg-white hover:text-hospital-green">
-              <a href="tel:+919966151626">Call Now: +91 9966151626</a>
+      {/* Health Insurance Partners */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12" data-aos="fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Health Insurance Partners</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We accept all major health insurance providers for cashless treatment and easy claims.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+            {[
+              { name: 'Apollo Munich', logo: '/insurance/apollo-munich.png' },
+              { name: 'Star Health', logo: '/insurance/star-health.png' },
+              { name: 'HDFC ERGO', logo: '/insurance/hdfc-ergo.png' },
+              { name: 'ICICI Lombard', logo: '/insurance/icici-lombard.png' },
+              { name: 'Bajaj Allianz', logo: '/insurance/bajaj-allianz.png' },
+              { name: 'Max Bupa', logo: '/insurance/max-bupa.png' },
+              { name: 'Reliance General', logo: '/insurance/reliance.png' },
+              { name: 'New India Assurance', logo: '/insurance/new-india.png' },
+              { name: 'Oriental Insurance', logo: '/insurance/oriental.png' },
+              { name: 'United India', logo: '/insurance/united-india.png' },
+            ].map((partner, index) => (
+              <div 
+                key={index}
+                className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center h-28"
+                data-aos="fade-up"
+                data-aos-delay={50 * (index % 5)}
+              >
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name} 
+                  className="max-h-16 max-w-full object-contain"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.outerHTML = `<div class="text-center">
+                      <div class="text-sm font-bold text-primary">${partner.name}</div>
+                      <div class="text-xs text-gray-500">Insurance Partner</div>
+                    </div>`;
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Button asChild size="lg" className="bg-hospital-green hover:bg-hospital-green/90">
+              <NavLink to="/contact#insurance">
+                Insurance Assistance
+              </NavLink>
             </Button>
           </div>
         </div>

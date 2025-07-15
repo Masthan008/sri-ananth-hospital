@@ -281,9 +281,13 @@ const About = () => {
       </section>
 
       {/* Why We're Your Top Choice */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div 
+            className="text-center mb-12"
+            data-aos="fade-up"
+            data-aos-duration="800"
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Why We're Your Top Choice</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Schedule a consultation with Sri Ananth Multispecialty Hospital.
@@ -292,7 +296,12 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div 
+              className="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
+              data-aos="fade-up"
+              data-aos-delay="100"
+              data-aos-duration="600"
+            >
               <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                 <Clock className="w-6 h-6 text-green-600" />
               </div>

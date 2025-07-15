@@ -50,7 +50,7 @@ const Contact = () => {
       title: "Operating Hours",
       details: [
         "OPD: 8:00 AM - 10:00 PM",
-        "Emergency: 24/7 Services Every Day"
+        "Emergency: 24/7 Emergency Services Everyday"
       ]
     }
   ];

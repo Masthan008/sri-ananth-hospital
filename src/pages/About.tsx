@@ -341,9 +341,9 @@ const About = () => {
                   </div>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button asChild>
-                      <a href="tel:+918106121344" className="flex items-center space-x-2">
+                      <a href="tel:+918499995554" className="flex items-center space-x-2">
                         <Phone className="w-4 h-4" />
-                        <span>+91 81061 21344</span>
+                        <span>+91 8499995554</span>
                       </a>
                     </Button>
                     <Button variant="outline" asChild>
@@ -369,7 +369,7 @@ const About = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="outline" className="bg-white text-red-500 border-white hover:bg-gray-100">
-                <a href="tel:+918499995552">Emergency: +91 84999-95552</a>
+                <a href="tel:+918499995554">Emergency: +91 8499995554</a>
               </Button>
               <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-red-500">
                 <NavLink to="/contact">Contact Us</NavLink>

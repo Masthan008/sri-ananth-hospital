@@ -95,12 +95,12 @@ const Home = () => {
 
   const specialties = [
     { name: "General Medicine", image: "/service-images/GENERAL MEDICINE.png", id: "general-medicine" },
-    { name: "Dental", image: "/service-images/DENTAL.png", id: "dental" },
-    { name: "Urology", image: "/service-images/UROLOGY.png", id: "urology" },
-    { name: "Cardiology", image: "/service-images/CARDIOLOGY.png", id: "cardiology" },
-    { name: "Orthopedics", image: "/service-images/ORTHOPEDICS.png", id: "orthopedics" },
-    { name: "Audiology", image: "/service-images/AUDIOLOGY.png", id: "audiology" },
-    { name: "General Surgery", image: "/service-images/GENERAL SURGERY.png", id: "general-surgery" },
+    { name: "Dental", image: "/service-images/DENTAL .png", id: "dental" },
+    { name: "Urology", image: "/service-images/UROLOGY .png", id: "urology" },
+    { name: "Cardiology", image: "/service-images/CARDIOLOGY .png", id: "cardiology" },
+    { name: "Orthopedics", image: "/service-images/ORTHOPEDICS .png", id: "orthopedics" },
+    { name: "Audiology", image: "/service-images/AUDIOLOGY .png", id: "audiology" },
+    { name: "General Surgery", image: "/service-images/GENERAL SURGERY .png", id: "general-surgery" },
     { name: "Gynecology", image: "/lovable-uploads/GYNECOLOGY.png", id: "gynecology" },
     { name: "Pulmonology", image: "/lovable-uploads/PULMONOLOGY.png", id: "pulmonology" },
     { name: "Pediatrics", image: "/lovable-uploads/PEDIATRICS.png", id: "pediatrics" },

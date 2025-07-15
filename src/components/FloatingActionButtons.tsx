@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, MessageSquare, X, ChevronUp } from 'lucide-react';
+import { Phone, MessageCircle, X, ChevronUp } from 'lucide-react';
 
 const FloatingActionButtons = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -27,7 +27,7 @@ const FloatingActionButtons = () => {
   const socialMedia = [
     {
       name: 'WhatsApp',
-      icon: <MessageSquare className="w-4 h-4" />,
+      icon: <MessageCircle className="w-4 h-4" />,
       url: 'https://wa.me/919966151626',
       color: 'bg-green-500 hover:bg-green-600',
       tooltip: 'Chat on WhatsApp'

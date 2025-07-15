@@ -1,22 +1,22 @@
 [build]
-  command = "npm install && npm run build"
+  command = "npm ci && npm run build"
   publish = "dist"
   functions = "netlify/functions"
 
 [build.environment]
-  NODE_VERSION = "20.0.0"
+  NODE_VERSION = "18.18.2"
   NPM_VERBOSE = "true"
-  NPM_CONFIG_PRODUCTION = "false"
+  NPM_FLAGS = "--legacy-peer-deps"
   NODE_ENV = "production"
-  VITE_APP_NAME = "Sri Ananth Hospital"
+  VITE_BASE_URL = "/"
 
-# Required for SPA routing - handle all routes with index.html
+# SPA fallback rule
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Security headers
+# Security and cache control headers
 [[headers]]
   for = "/*"
   [headers.values]
@@ -24,57 +24,16 @@
     X-Content-Type-Options = "nosniff"
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:;"
-  to = "/index.html"
-  status = 200
-  force = false
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https:; object-src 'none';"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
 
-# Handle 404s
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
-
-# Security headers
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    X-XSS-Protection = "1; mode=block"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src-attr 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https:;"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-
-# Cache control for static assets
 [[headers]]
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-    Access-Control-Allow-Origin = "*"
 
-# Cache control for HTML files
 [[headers]]
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    X-XSS-Protection = "1; mode=block"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-
-[dev]
-  framework = "#custom"
-  targetPort = 8080
-  port = 8888
-  publish = "dist"
-  command = "npm run dev"

@@ -49,6 +49,7 @@ const Navigation = () => {
         { name: "Gallery", path: "/gallery" },
         { name: "Testimonials", path: "/testimonials" },
         { name: "FAQs", path: "/faqs" },
+        { name: "Health Tips", path: "/health-tips" },
         { name: "Contact Us", path: "/contact" },
       ]
     },

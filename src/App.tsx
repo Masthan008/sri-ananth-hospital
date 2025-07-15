@@ -24,6 +24,7 @@ import Testimonials from "./pages/testimonials";
 import Appointment from "./pages/appointment";
 import Doctors from "./pages/doctors";
 import Locations from "./pages/locations";
+import HealthTips from "./pages/health-tips";
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,16 @@ const App = () => (
               <Route path="/appointment" element={<Appointment />} />
               <Route path="/doctors" element={<Doctors />} />
               <Route path="/locations" element={<Locations />} />
+              <Route path="/health-tips" element={<HealthTips />} />
+              
+              {/* Service Subpages */}
+              <Route path="/services/general-medicine" element={<Services defaultTab="general-medicine" />} />
+              <Route path="/services/dental" element={<Services defaultTab="dental" />} />
+              <Route path="/services/gynecology" element={<Services defaultTab="gynecology" />} />
+              <Route path="/services/urology" element={<Services defaultTab="urology" />} />
+              <Route path="/services/pulmonology" element={<Services defaultTab="pulmonology" />} />
+              <Route path="/services/pediatrics" element={<Services defaultTab="pediatrics" />} />
+              <Route path="/services/infertility" element={<Services defaultTab="infertility" />} />
               
               {/* Catch-all route */}
               <Route path="*" element={<NotFound />} />

@@ -197,7 +197,7 @@ const Services = () => {
                 size="lg" 
                 variant="outline" 
                 className="bg-white text-red-500 border-white hover:bg-gray-100 transition-all duration-300 mx-auto block"
-                onClick={() => window.open('tel:+918499995552')}
+                onClick={() => window.open('tel:+918499995554')}
               >
                 <span>Emergency: +91 84999-95552</span>
               </Button>

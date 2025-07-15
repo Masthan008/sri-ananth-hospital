@@ -293,9 +293,9 @@ const Contact = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="outline" className="bg-white text-red-500 border-white hover:bg-gray-100 whitespace-nowrap">
-                <a href="tel:+918499995552" className="flex items-center space-x-2">
+                <a href="tel:+918499995554" className="flex items-center space-x-2">
                   <Phone className="w-5 h-5" />
-                  <span>Emergency: +91 84999-95552</span>
+                  <span>Emergency: +91 8499995554</span>
                 </a>
               </Button>
             </div>

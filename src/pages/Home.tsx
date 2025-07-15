@@ -121,7 +121,7 @@ const Home = () => {
           <p className="text-2xl md:text-3xl font-semibold mb-8 animate-slide-in-left text-white bg-red-600/90 inline-block px-6 py-2 rounded-full">
             <span className="flex items-center justify-center space-x-2 whitespace-nowrap">
               <Clock className="w-6 h-6" />
-              <span>24/7 Emergency Service Everyday</span>
+              <span>24/7 Emergency Services Everyday</span>
             </span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-in-right">
@@ -163,7 +163,7 @@ const Home = () => {
                 <p className="text-gray-500 text-sm mb-4">Managing Director</p>
                 <div className="flex items-center space-x-4">
                   <Button asChild className="flex-1">
-                    <a href="tel:+918106121344" className="flex items-center justify-center space-x-2">
+                    <a href="tel:+919966151626" className="flex items-center justify-center space-x-2">
                       <Phone className="w-4 h-4" />
                       <span>Call Now</span>
                     </a>
@@ -194,7 +194,7 @@ const Home = () => {
                 <p className="text-gray-600 mb-1 font-medium">Gynecologist and Infertility Specialist</p>
                 <div className="flex items-center space-x-4 mt-4">
                   <Button asChild className="flex-1">
-                    <a href="tel:+918106121344" className="flex items-center justify-center space-x-2">
+                    <a href="tel:+919966151626" className="flex items-center justify-center space-x-2">
                       <Phone className="w-4 h-4" />
                       <span>Call Now</span>
                     </a>
@@ -216,15 +216,14 @@ const Home = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">DR P SRUJAN KUMAR</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. P Srujan Kumar</h3>
                 <p className="text-lg text-hospital-blue font-semibold mb-4">
                   BDS MDS<br />
-                  <span className="text-gray-600">PERIODONTIST AND IMPLANTOLOGIST</span>
+                  PERIODONTIST AND IMPLANTOLOGIST
                 </p>
-                <p className="text-gray-600 mb-4 font-medium">Consultant Physician</p>
                 <div className="flex items-center space-x-4">
                   <Button asChild className="flex-1">
-                    <a href="tel:+918106121344" className="flex items-center justify-center space-x-2">
+                    <a href="tel:+919966151626" className="flex items-center justify-center space-x-2">
                       <Phone className="w-4 h-4" />
                       <span>Call Now</span>
                     </a>

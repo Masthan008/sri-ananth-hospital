@@ -27,7 +27,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center space-x-2 whitespace-nowrap">
               <Clock className="w-4 h-4 text-red-600 flex-shrink-0" />
-              <span className="text-sm font-medium text-red-600">24/7 Emergency Service Everyday</span>
+              <span className="text-sm font-medium text-red-600">24/7 Emergency Services Everyday</span>
             </div>
           </div>
 
@@ -60,11 +60,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-primary" />
-                <a href="tel:+918499995554" className="text-muted-foreground hover:text-primary transition-colors">+91 8499995554</a>
+                <a href="tel:+919966151626" className="text-muted-foreground hover:text-primary transition-colors">+91 9966151626</a>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground">SriAnanthMultiSpecialtyHospital@gmail.com</span>
+                <span className="text-xs text-muted-foreground">SriAnanthMultiSpecialtyHospital@gmail.com</span>
               </div>
             </div>
           </div>

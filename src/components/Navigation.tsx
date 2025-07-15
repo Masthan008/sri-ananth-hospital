@@ -1,23 +1,86 @@
 
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Calendar } from "lucide-react";
+import { Menu, X, Phone, Calendar, ChevronDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const location = useLocation();
 
-  const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Why Choose Us", path: "/why-choose-us" },
-    { name: "News", path: "/news" },
-    { name: "Gallery", path: "/gallery" },
-    { name: "FAQs", path: "/faqs" },
-    { name: "Contact", path: "/contact" },
+  // Group navigation items
+  const navGroups = [
+    {
+      groupName: "About",
+      items: [
+        { name: "About Us", path: "/about" },
+        { name: "Why Choose Us", path: "/why-choose-us" },
+        { name: "Our Team", path: "/our-team" },
+      ]
+    },
+    {
+      groupName: "Services",
+      items: [
+        { name: "All Services", path: "/services" },
+        { name: "Emergency Care", path: "/services/emergency" },
+        { name: "Cardiology", path: "/services/cardiology" },
+        { name: "Orthopedics", path: "/services/orthopedics" },
+        { name: "Neurology", path: "/services/neurology" },
+      ]
+    },
+    {
+      groupName: "Patient Care",
+      items: [
+        { name: "Patient Information", path: "/patient-info" },
+        { name: "Visiting Hours", path: "/visiting-hours" },
+        { name: "Insurance", path: "/insurance" },
+        { name: "Billing", path: "/billing" },
+      ]
+    },
+    {
+      groupName: "Resources",
+      items: [
+        { name: "News & Blog", path: "/news" },
+        { name: "Gallery", path: "/gallery" },
+        { name: "FAQs", path: "/faqs" },
+        { name: "Testimonials", path: "/testimonials" },
+      ]
+    },
+    {
+      groupName: "Contact",
+      items: [
+        { name: "Contact Us", path: "/contact" },
+        { name: "Book Appointment", path: "/appointment" },
+        { name: "Find a Doctor", path: "/doctors" },
+        { name: "Locations", path: "/locations" },
+      ]
+    }
   ];
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+      if (window.innerWidth >= 768) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const toggleDropdown = (groupName: string) => {
+    setActiveDropdown(activeDropdown === groupName ? null : groupName);
+  };
 
   const handleBookAppointment = () => {
     // Navigate to contact page with appointment form
@@ -62,20 +125,61 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.name}
-                to={item.path}
-                className={({ isActive }) =>
-                  cn(
-                    "text-sm font-medium transition-colors hover:text-primary relative",
-                    isActive ? "text-primary" : "text-foreground"
-                  )
-                }
-              >
-                {item.name}
-              </NavLink>
+          <div className="hidden md:flex items-center space-x-4">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                cn(
+                  "px-3 py-2 text-sm font-medium transition-colors hover:text-primary rounded-md",
+                  isActive ? "text-primary bg-primary/5" : "text-foreground"
+                )
+              }
+            >
+              Home
+            </NavLink>
+            
+            {navGroups.map((group) => (
+              <div key={group.groupName} className="relative group">
+                <button
+                  onClick={() => toggleDropdown(group.groupName)}
+                  className={cn(
+                    "px-3 py-2 text-sm font-medium flex items-center space-x-1 rounded-md transition-colors",
+                    group.items.some(item => location.pathname === item.path) 
+                      ? "text-primary" 
+                      : "text-foreground hover:text-primary"
+                  )}
+                >
+                  <span>{group.groupName}</span>
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+                
+                {/* Dropdown Menu */}
+                <div 
+                  className={cn(
+                    "absolute left-0 mt-1 w-56 bg-white rounded-md shadow-lg overflow-hidden z-50 transition-all duration-200 transform origin-top",
+                    activeDropdown === group.groupName 
+                      ? "opacity-100 scale-100" 
+                      : "opacity-0 scale-95 pointer-events-none"
+                  )}
+                >
+                  <div className="py-1">
+                    {group.items.map((item) => (
+                      <NavLink
+                        key={item.path}
+                        to={item.path}
+                        className={({ isActive }) =>
+                          cn(
+                            "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors",
+                            isActive ? "bg-primary/5 text-primary font-medium" : ""
+                          )
+                        }
+                      >
+                        {item.name}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
 
@@ -106,28 +210,103 @@ const Navigation = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-4 space-y-4 border-t animate-fade-in">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.name}
-                to={item.path}
-                className={({ isActive }) =>
-                  cn(
-                    "block px-4 py-2 text-sm font-medium transition-colors hover:text-primary rounded-lg",
-                    isActive ? "text-primary bg-primary/5" : "text-foreground"
-                  )
-                }
+        {/* Mobile Sidebar Navigation */}
+        <div 
+          className={cn(
+            "fixed inset-y-0 left-0 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 md:hidden overflow-y-auto",
+            isOpen ? "translate-x-0" : "-translate-x-full"
+          )}
+        >
+          <div className="p-4 border-b">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <img 
+                  src="/assets/images/logo.png" 
+                  alt="Sri Ananth Multi Specialty Hospital" 
+                  className="h-10 w-auto object-contain"
+                />
+              </div>
+              <Button 
+                variant="ghost" 
+                size="icon" 
                 onClick={() => setIsOpen(false)}
+                className="text-gray-500 hover:text-gray-700"
               >
-                {item.name}
-              </NavLink>
+                <X className="w-5 h-5" />
+              </Button>
+            </div>
+          </div>
+          
+          <nav className="p-4 space-y-1">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                cn(
+                  "flex items-center px-3 py-3 text-sm font-medium rounded-lg mb-1",
+                  isActive 
+                    ? "bg-primary/10 text-primary" 
+                    : "text-gray-700 hover:bg-gray-100"
+                )
+              }
+            >
+              Home
+            </NavLink>
+            
+            {navGroups.map((group) => (
+              <div key={group.groupName} className="mb-1">
+                <button
+                  onClick={() => toggleDropdown(group.groupName)}
+                  className={cn(
+                    "w-full flex items-center justify-between px-3 py-3 text-sm font-medium rounded-lg",
+                    activeDropdown === group.groupName || 
+                    group.items.some(item => location.pathname === item.path)
+                      ? "text-primary bg-primary/5" 
+                      : "text-gray-700 hover:bg-gray-100"
+                  )}
+                >
+                  <span>{group.groupName}</span>
+                  <ChevronRight 
+                    className={cn(
+                      "w-4 h-4 transition-transform duration-200",
+                      activeDropdown === group.groupName ? "rotate-90" : ""
+                    )} 
+                  />
+                </button>
+                
+                <div 
+                  className={cn(
+                    "pl-4 mt-1 space-y-1 overflow-hidden transition-all duration-200",
+                    activeDropdown === group.groupName 
+                      ? "max-h-96 opacity-100" 
+                      : "max-h-0 opacity-0"
+                  )}
+                >
+                  {group.items.map((item) => (
+                    <NavLink
+                      key={item.path}
+                      to={item.path}
+                      className={({ isActive }) =>
+                        cn(
+                          "block px-3 py-2 text-sm rounded-lg",
+                          isActive 
+                            ? "bg-primary/5 text-primary font-medium" 
+                            : "text-gray-600 hover:bg-gray-50"
+                        )
+                      }
+                    >
+                      {item.name}
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
             ))}
-            <div className="px-4 pt-4 border-t">
-              <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-4">
+            
+            <div className="pt-4 mt-4 border-t">
+              <div className="flex items-center space-x-2 text-sm text-gray-600 mb-4 px-3">
                 <Phone className="w-4 h-4" />
-                <a href="tel:+919966151626" className="hover:text-primary transition-colors">+91 9966151626</a>
+                <a href="tel:+919966151626" className="hover:text-primary transition-colors">
+                  +91 9966151626
+                </a>
               </div>
               <Button 
                 className="w-full bg-hospital-green hover:bg-hospital-green/90"
@@ -140,7 +319,15 @@ const Navigation = () => {
                 Book Appointment
               </Button>
             </div>
-          </div>
+          </nav>
+        </div>
+        
+        {/* Overlay when mobile menu is open */}
+        {isOpen && (
+          <div 
+            className="fixed inset-0 bg-black/50 z-40 md:hidden"
+            onClick={() => setIsOpen(false)}
+          />
         )}
       </div>
     </nav>

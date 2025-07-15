@@ -181,60 +181,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Why We Are Your Choice */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-3">
-            Why We Are Your Choice
-          </h2>
-          <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-12">
-            Discover why Sri Ananth Hospital stands out as the trusted healthcare partner in Vikarabad and beyond.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="bg-white border-0 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
-              <CardContent className="p-6 text-center">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Clock className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">24/7 Emergency Care</h3>
-                <p className="text-gray-600">Round-the-clock medical emergency services with skilled doctors and rapid response.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-0 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
-              <CardContent className="p-6 text-center">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Experienced Doctors</h3>
-                <p className="text-gray-600">Our doctors are highly qualified, trained, and committed to delivering expert care.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-0 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
-              <CardContent className="p-6 text-center">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Modern Infrastructure</h3>
-                <p className="text-gray-600">Equipped with the latest medical technology for diagnosis and treatment.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-0 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
-              <CardContent className="p-6 text-center">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Star className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Award-Winning Service</h3>
-                <p className="text-gray-600">Recognized across Telangana for excellence in healthcare and patient satisfaction.</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Our Values */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

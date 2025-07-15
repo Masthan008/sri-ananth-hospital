@@ -75,82 +75,94 @@ const Gallery = () => {
     },
     {
       id: 'fc2',
-      src: '/images/gallery/EMEGENCY ROOM .png',
+      src: '/images/gallery/icu.jpg',
       alt: 'Intensive Care Unit (ICU)',
       category: 'facilities',
       title: 'ICU'
     },
     {
       id: 'fc3',
-      src: '/images/gallery/PATIENT ROOM .png',
+      src: '/images/gallery/inpatient-ward.jpg',
       alt: 'Inpatient Wards',
       category: 'facilities',
       title: 'Inpatient Wards'
     },
     {
       id: 'fc4',
-      src: '/images/gallery/LABORATORY .png',
+      src: '/images/gallery/pharmacy.jpg',
       alt: 'Pharmacy',
       category: 'facilities',
       title: 'Pharmacy'
     },
     {
       id: 'fc5',
-      src: '/images/gallery/DOCTOR WITH PATIENT .png',
+      src: '/images/gallery/debtal-clinic.jpg',
       alt: 'Dental Clinic',
       category: 'facilities',
       title: 'Dental Clinic'
     },
-    
-    // Newly Added Facilities
     {
       id: 'fc6',
-      src: '/images/gallery/debtal-clinic.jpg',
-      alt: 'Dental Operation Theatre',
+      src: '/images/gallery/LABORATORY-INTERIOR.jpg',
+      alt: 'Laboratory',
       category: 'facilities',
-      title: 'Dental Operation Theatre'
+      title: 'Laboratory'
     },
     {
       id: 'fc7',
-      src: '/images/gallery/icu.jpg',
+      src: '/images/gallery/PRIVATE-ROOMS.jpg',
+      alt: 'Private Rooms',
+      category: 'facilities',
+      title: 'Private Rooms'
+    },
+    {
+      id: 'fc8',
+      src: '/images/gallery/SCANNING-ROOM.jpg',
+      alt: 'Scanning Room',
+      category: 'facilities',
+      title: 'Scanning Room'
+    },
+    {
+      id: 'fc9',
+      src: '/images/gallery/AC-WARDS.jpg',
       alt: 'AC Wards',
       category: 'facilities',
       title: 'AC Wards'
     },
     {
-      id: 'fc8',
-      src: '/images/gallery/inpatient-ward.jpg',
+      id: 'fc10',
+      src: '/images/gallery/GENERAL-WARDS.jpg',
       alt: 'General Wards',
       category: 'facilities',
       title: 'General Wards'
     },
     {
-      id: 'fc9',
-      src: '/images/gallery/pharmacy.jpg',
+      id: 'fc11',
+      src: '/images/gallery/WAITING-HALL.jpg',
       alt: 'Waiting Hall',
       category: 'facilities',
       title: 'Waiting Hall'
     },
     {
-      id: 'fc10',
-      src: '/images/gallery/DOCTOR WITH PATIENT .png',
+      id: 'fc12',
+      src: '/images/gallery/DOCTORS-LOUNGE.jpg',
       alt: 'Doctors Lounge',
       category: 'facilities',
       title: 'Doctors Lounge'
     },
     {
-      id: 'fc11',
-      src: '/images/gallery/PATIENT ROOM .png',
+      id: 'fc13',
+      src: '/images/gallery/DELUXE-ROOMS.jpg',
       alt: 'Deluxe Rooms',
       category: 'facilities',
       title: 'Deluxe Rooms'
     },
     {
-      id: 'fc12',
-      src: '/images/gallery/LABORATORY .png',
-      alt: 'Laboratory',
+      id: 'fc14',
+      src: '/images/gallery/DENTAL-ROOM.jpg',
+      alt: 'Dental Room',
       category: 'facilities',
-      title: 'Laboratory'
+      title: 'Dental Room'
     },
     
     // Events

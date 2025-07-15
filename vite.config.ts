@@ -31,9 +31,7 @@ export default defineConfig(({ mode }) => {
       cssMinify: mode === 'production',
       rollupOptions: {
         external: [
-          '@emotion/react/jsx-runtime',
-          'lovable-tagger',
-          'sharp'
+          '@emotion/react/jsx-runtime'
         ],
         output: {
           manualChunks: (id) => {

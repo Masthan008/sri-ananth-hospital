@@ -34,13 +34,49 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="/" className="text-muted-foreground hover:text-primary transition-colors">Home</a></li>
-              <li><a href="/about" className="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="/services" className="text-muted-foreground hover:text-primary transition-colors">Services</a></li>
-              <li><a href="/faqs" className="text-muted-foreground hover:text-primary transition-colors">FAQs</a></li>
-              <li><a href="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
-            </ul>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <h5 className="font-medium text-sm mb-2">About</h5>
+                <ul className="space-y-2 text-sm">
+                  <li><a href="/about" className="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
+                  <li><a href="/our-team" className="text-muted-foreground hover:text-primary transition-colors">Our Doctors</a></li>
+                  <li><a href="/why-choose-us" className="text-muted-foreground hover:text-primary transition-colors">Why Choose Us</a></li>
+                </ul>
+              </div>
+              <div>
+                <h5 className="font-medium text-sm mb-2">Services</h5>
+                <ul className="space-y-2 text-sm">
+                  <li><a href="/services#general-medicine" className="text-muted-foreground hover:text-primary transition-colors">General Medicine</a></li>
+                  <li><a href="/services#dental" className="text-muted-foreground hover:text-primary transition-colors">Dental Care</a></li>
+                  <li><a href="/services#gynecology" className="text-muted-foreground hover:text-primary transition-colors">Gynecology</a></li>
+                  <li><a href="/services#urology" className="text-muted-foreground hover:text-primary transition-colors">Urology</a></li>
+                  <li><a href="/services#pulmonology" className="text-muted-foreground hover:text-primary transition-colors">Pulmonology</a></li>
+                  <li><a href="/services#pediatrics" className="text-muted-foreground hover:text-primary transition-colors">Pediatrics</a></li>
+                  <li><a href="/services#infertility" className="text-muted-foreground hover:text-primary transition-colors">Infertility</a></li>
+                </ul>
+              </div>
+              <div className="mt-4">
+                <h5 className="font-medium text-sm mb-2">Patient Care</h5>
+                <ul className="space-y-2 text-sm">
+                  <li><a href="/appointment" className="text-muted-foreground hover:text-primary transition-colors">Appointments</a></li>
+                  <li><a href="/patient-info" className="text-muted-foreground hover:text-primary transition-colors">Patient Information</a></li>
+                  <li><a href="/visiting-hours" className="text-muted-foreground hover:text-primary transition-colors">Visiting Hours</a></li>
+                  <li><a href="/insurance" className="text-muted-foreground hover:text-primary transition-colors">Insurance</a></li>
+                  <li><a href="/billing" className="text-muted-foreground hover:text-primary transition-colors">Billing</a></li>
+                </ul>
+              </div>
+              <div className="mt-4">
+                <h5 className="font-medium text-sm mb-2">Resources</h5>
+                <ul className="space-y-2 text-sm">
+                  <li><a href="/gallery" className="text-muted-foreground hover:text-primary transition-colors">Gallery</a></li>
+                  <li><a href="/testimonials" className="text-muted-foreground hover:text-primary transition-colors">Testimonials</a></li>
+                  <li><a href="/health-tips" className="text-muted-foreground hover:text-primary transition-colors">Health Tips</a></li>
+                  <li><a href="/faqs" className="text-muted-foreground hover:text-primary transition-colors">FAQs</a></li>
+                  <li><a href="/doctors" className="text-muted-foreground hover:text-primary transition-colors">Find a Doctor</a></li>
+                  <li><a href="/locations" className="text-muted-foreground hover:text-primary transition-colors">Locations</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           {/* Contact Info */}

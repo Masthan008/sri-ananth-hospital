@@ -2,7 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
   Heart, 
-  Award, 
   Users, 
   Clock, 
   Shield, 
@@ -15,39 +14,6 @@ import { NavLink } from "react-router-dom";
 import doctorProfile from "@/assets/doctor-profile.jpg";
 
 const About = () => {
-  const achievements = [
-    {
-      year: "2019",
-      title: "Top Medical Award",
-      description: "Recognized for excellence in patient care and medical services in Telangana"
-    },
-    {
-      year: "2020",
-      title: "Best Dental Award",
-      description: "Dr. Gireesha Reddy received the Best Oral & Maxillofacial Surgeon award"
-    },
-    {
-      year: "2021",
-      title: "Emergency Care Excellence",
-      description: "Awarded for outstanding 24/7 emergency medical services"
-    },
-    {
-      year: "2022",
-      title: "Patient Safety Certification",
-      description: "Certified for maintaining highest standards of patient safety and care"
-    },
-    {
-      year: "2023",
-      title: "Community Health Champion",
-      description: "Recognized for significant contribution to community health in Vikarabad"
-    },
-    {
-      year: "2024",
-      title: "Technology Excellence",
-      description: "Awarded for implementing modern medical technology and digital healthcare"
-    }
-  ];
-
   const values = [
     {
       icon: Heart,
@@ -259,52 +225,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline of Achievements */}
-      <section className="py-16 bg-hospital-light-blue">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in">
-            Our Journey of Excellence
-          </h2>
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-primary/20"></div>
-            
-            <div className="space-y-8">
-              {achievements.map((achievement, index) => (
-                <div 
-                  key={index} 
-                  className={`relative flex items-center ${
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  } animate-slide-in-left`}
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  {/* Timeline dot */}
-                  <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg z-10"></div>
-                  
-                  {/* Content */}
-                  <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'} ml-16 md:ml-0`}>
-                    <Card className="shadow-lg border-0">
-                      <CardContent className="p-6">
-                        <div className="flex items-center mb-3">
-                          <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
-                            {achievement.year.slice(-2)}
-                          </div>
-                          <div>
-                            <div className="text-lg font-bold text-primary">{achievement.year}</div>
-                            <div className="text-sm text-gray-500">Year</div>
-                          </div>
-                        </div>
-                        <h3 className="text-xl font-bold mb-2">{achievement.title}</h3>
-                        <p className="text-gray-600">{achievement.description}</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Doctor Profile */}
       <section className="py-16">

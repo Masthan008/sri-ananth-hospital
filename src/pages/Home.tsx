@@ -96,17 +96,17 @@ const Home = () => {
   const specialties = [
     { name: "General Medicine", image: "/service-images/GENERAL MEDICINE.png", id: "general-medicine" },
     { name: "Dental", image: "/service-images/DENTAL .png", id: "dental" },
-    { name: "Urology", image: "/service-images/UROLOGY .png", id: "urology" },
+    { name: "Urology", image: "/service-images/UROLOGY.png", id: "urology" },
     { name: "Cardiology", image: "/service-images/CARDIOLOGY .png", id: "cardiology" },
     { name: "Orthopedics", image: "/service-images/ORTHOPEDICS .png", id: "orthopedics" },
     { name: "Audiology", image: "/service-images/AUDIOLOGY .png", id: "audiology" },
     { name: "General Surgery", image: "/service-images/GENERAL SURGERY .png", id: "general-surgery" },
-    { name: "Gynecology", image: "/lovable-uploads/GYNECOLOGY.png", id: "gynecology" },
-    { name: "Pulmonology", image: "/lovable-uploads/PULMONOLOGY.png", id: "pulmonology" },
-    { name: "Pediatrics", image: "/lovable-uploads/PEDIATRICS.png", id: "pediatrics" },
-    { name: "Critical Care", image: "/lovable-uploads/CRITICAL CARE.png", id: "critical-care" },
-    { name: "Infertility", image: "/lovable-uploads/INFERTILITY.png", id: "infertility" },
-    { name: "Maxillofacial", image: "/lovable-uploads/MAXILLOFACIAL.png", id: "maxillofacial" }
+    { name: "Gynecology", image: "/service-images/GYNECOLOGY.png", id: "gynecology" },
+    { name: "Pulmonology", image: "/service-images/PULMONOLGY.png", id: "pulmonology" },
+    { name: "Pediatrics", image: "/service-images/PEDIATRICS.png", id: "pediatrics" },
+    { name: "Critical Care", image: "/service-images/CRITICAL CARE.png", id: "critical-care" },
+    { name: "Infertility", image: "/service-images/INFERTILITY.png", id: "infertility" },
+    { name: "Maxillofacial", image: "/service-images/MAXILLOFACIAL.png", id: "maxillofacial" }
   ];
 
 

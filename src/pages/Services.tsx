@@ -32,7 +32,7 @@ const Services = () => {
     {
       id: "general-medicine",
       icon: Stethoscope,
-      image: "/lovable-uploads/GENERAL .png",
+      image: "/lovable-uploads/GENERAL.png",
       title: "General Medicine",
       description: "Comprehensive primary healthcare services including routine check-ups, preventive care, and treatment of common medical conditions. Our experienced physicians provide personalized care for patients of all ages.",
       features: ["Routine Health Check-ups", "Chronic Disease Management", "Preventive Care", "Emergency Consultations"]
@@ -40,7 +40,7 @@ const Services = () => {
     {
       id: "dental",
       icon: User,
-      image: "/lovable-uploads/DENTAL .png",
+      image: "/lovable-uploads/DENTAL.png",
       title: "Dental",
       description: "Complete dental care services from routine cleanings to complex oral surgeries. Led by Dr. Gireesha Reddy, our dental department offers state-of-the-art treatments with the latest technology.",
       features: ["Oral Surgery", "Dental Implants", "Cosmetic Dentistry", "Emergency Dental Care"]
@@ -48,7 +48,7 @@ const Services = () => {
     {
       id: "urology",
       icon: Activity,
-      image: "/lovable-uploads/UROLOGY .png",
+      image: "/lovable-uploads/UROLOGY.png",
       title: "Urology",
       description: "Specialized treatment for urological conditions affecting the urinary tract and male reproductive system. Our urologists provide both medical and surgical treatments with minimal invasive techniques.",
       features: ["Kidney Stone Treatment", "Prostate Care", "Urinary Tract Infections", "Male Infertility"]
@@ -56,7 +56,7 @@ const Services = () => {
     {
       id: "cardiology",
       icon: Heart,
-      image: "/lovable-uploads/CARDIOLOGY .png",
+      image: "/lovable-uploads/CARDIOLOGY.png",
       title: "Cardiology",
       description: "Comprehensive heart care services including diagnosis, treatment, and prevention of cardiovascular diseases. Our cardiac team provides both interventional and non-interventional treatments.",
       features: ["Heart Disease Prevention", "ECG & Echo Services", "Cardiac Rehabilitation", "Emergency Cardiac Care"]
@@ -64,7 +64,7 @@ const Services = () => {
     {
       id: "orthopedics",
       icon: Bone,
-      image: "/lovable-uploads/ORTHOPEDICS .png",
+      image: "/lovable-uploads/ORTHOPEDICS.png",
       title: "Orthopedics",
       description: "Treatment of musculoskeletal conditions including bones, joints, ligaments, and muscles. Our orthopedic specialists provide both surgical and non-surgical treatments.",
       features: ["Joint Replacement", "Fracture Treatment", "Sports Medicine", "Arthritis Management"]
@@ -72,7 +72,7 @@ const Services = () => {
     {
       id: "audiology",
       icon: Ear,
-      image: "/lovable-uploads/AUDIOLOGY .png",
+      image: "/lovable-uploads/AUDIOLOGY.png",
       title: "Audiology",
       description: "Complete hearing and balance care services including hearing assessments, hearing aid fittings, and treatment of ear-related disorders.",
       features: ["Hearing Tests", "Hearing Aid Services", "Tinnitus Treatment", "Balance Disorders"]
@@ -80,7 +80,7 @@ const Services = () => {
     {
       id: "general-surgery",
       icon: Scissors,
-      image: "/lovable-uploads/SURGERY .png",
+      image: "/lovable-uploads/GENERAL-SURGERY.png",
       title: "General Surgery",
       description: "Advanced surgical services across multiple specialties with minimally invasive techniques. Our surgical team ensures the highest standards of safety and patient care.",
       features: ["Laparoscopic Surgery", "Emergency Surgery", "Day Care Procedures", "Post-operative Care"]

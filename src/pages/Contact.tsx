@@ -11,10 +11,54 @@ import {
   Clock, 
   MessageCircle,
   Calendar,
-  Stethoscope
+  Stethoscope,
+  Facebook,
+  Instagram,
+  Youtube,
+  Twitter,
+  MessageSquare,
+  MessageCircle as WhatsApp
 } from "lucide-react";
 
 const Contact = () => {
+  const socialMedia = [
+    {
+      name: 'WhatsApp',
+      icon: 'whatsapp',
+      url: 'https://wa.me/919966151626',
+      color: 'text-green-600 hover:text-green-700',
+      bgColor: 'bg-green-100 hover:bg-green-50'
+    },
+    {
+      name: 'Facebook',
+      icon: 'facebook',
+      url: 'https://www.facebook.com/profile.php?id=100089282115038',
+      color: 'text-blue-600 hover:text-blue-700',
+      bgColor: 'bg-blue-100 hover:bg-blue-50'
+    },
+    {
+      name: 'Instagram',
+      icon: 'instagram',
+      url: 'https://www.instagram.com/sriananthmultispecialtyhospital',
+      color: 'text-pink-600 hover:text-pink-700',
+      bgColor: 'bg-pink-100 hover:bg-pink-50'
+    },
+    {
+      name: 'YouTube',
+      icon: 'youtube',
+      url: 'https://www.youtube.com/@sriananthmultispecialtyhospi',
+      color: 'text-red-600 hover:text-red-700',
+      bgColor: 'bg-red-100 hover:bg-red-50'
+    },
+    {
+      name: 'Twitter',
+      icon: 'twitter',
+      url: 'https://twitter.com/SriAnanthHosp',
+      color: 'text-blue-400 hover:text-blue-500',
+      bgColor: 'bg-blue-50 hover:bg-blue-100'
+    }
+  ];
+
   const contactInfo = [
     {
       icon: MapPin,
@@ -69,6 +113,29 @@ const Contact = () => {
 
   return (
     <div className="font-inter">
+      {/* Social Media Bar */}
+      <div className="bg-white shadow-sm">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center md:justify-end space-x-2 py-2">
+            {socialMedia.map((social, index) => (
+              <a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`p-2 rounded-full ${social.bgColor} ${social.color} transition-colors duration-200`}
+                aria-label={social.name}
+              >
+                {social.icon === 'facebook' && <Facebook className="w-5 h-5" />}
+                {social.icon === 'instagram' && <Instagram className="w-5 h-5" />}
+                {social.icon === 'youtube' && <Youtube className="w-5 h-5" />}
+                {social.icon === 'twitter' && <Twitter className="w-5 h-5" />}
+                {social.icon === 'whatsapp' && <WhatsApp className="w-5 h-5" />}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-br from-primary to-hospital-green text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

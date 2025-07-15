@@ -31,15 +31,37 @@ export default defineConfig(({ mode }) => {
       minify: mode === 'production' ? 'esbuild' : false,
       cssMinify: mode === 'production',
       rollupOptions: {
-        external: ['@emotion/react/jsx-runtime'],
+        external: [
+          '@emotion/react/jsx-runtime',
+          'lovable-tagger',
+          'sharp'
+        ],
         output: {
-          manualChunks: {
-            react: ['react', 'react-dom', 'react-router-dom'],
-            vendor: ['@radix-ui/react-*', 'lucide-react'],
+          manualChunks: (id) => {
+            if (id.includes('node_modules')) {
+              if (id.includes('@radix-ui')) {
+                return 'radix';
+              }
+              if (id.includes('lucide-react')) {
+                return 'lucide';
+              }
+              if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+                return 'react';
+              }
+              return 'vendor';
+            }
           },
+          chunkFileNames: 'assets/[name].[hash].js',
+          entryFileNames: 'assets/[name].[hash].js',
+          assetFileNames: 'assets/[name].[hash].[ext]',
         },
       },
       chunkSizeWarningLimit: 1000, // in kbs
+      reportCompressedSize: false,
+      commonjsOptions: {
+        include: /node_modules/,
+        transformMixedEsModules: true,
+      },
     },
     
     // Plugins

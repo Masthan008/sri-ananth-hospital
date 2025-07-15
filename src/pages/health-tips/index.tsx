@@ -4,9 +4,12 @@ import {
   Heart, 
   Shield, 
   Carrot, 
-  UserShield,
+  ShieldCheck,
   Brain,
-  Virus
+  ShieldOff,
+  Baby,
+  UserCog,
+  AlertTriangle
 } from "lucide-react";
 import { useEffect } from "react";
 import AOS from 'aos';
@@ -41,21 +44,21 @@ const HealthTips = () => {
     },
     {
       id: 4,
-      icon: UserShield,
-      title: "Child & Senior Care",
-      description: "Give age-appropriate care and vaccinations to both kids and the elderly."
+      icon: Baby,
+      title: "Child Care",
+      description: "Ensure proper nutrition, vaccinations, and regular check-ups for children's health."
     },
     {
       id: 5,
-      icon: Brain,
-      title: "Mental Wellness",
-      description: "Practice mindfulness, talk about your feelings, and take short breaks often."
+      icon: UserCog,
+      title: "Senior Care",
+      description: "Specialized care and regular health monitoring for our elderly patients."
     },
     {
       id: 6,
-      icon: Virus,
-      title: "Seasonal Health Alerts",
-      description: "Stay protected during flu, dengue, or heatwaves with timely health guidance."
+      icon: AlertTriangle,
+      title: "Health Alerts",
+      description: "Stay updated with important health alerts and seasonal disease prevention tips."
     }
   ];
 

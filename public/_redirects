@@ -2,12 +2,14 @@
 /*    /index.html    200
 
 # Force HTTPS
-/*    https://%{host}%{path}    301!
+/*    https://%{http_host}%{request_uri}    301
 
-# Cache static assets
+# Cache static assets for 1 year
 /assets/*  /assets/:splat  200
+  Cache-Control: public, max-age=31536000, immutable
 
 # API and other external routes can be added here
+# /api/*  https://api.example.com/:splat  200
 # /api/*    https://api.example.com/:splat    200
 
 # Cache static assets for 1 year

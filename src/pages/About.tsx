@@ -8,7 +8,8 @@ import {
   Star,
   Phone,
   Target,
-  Eye
+  Eye,
+  Calendar
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import doctorProfile from "@/assets/doctor-profile.jpg";
@@ -180,6 +181,60 @@ const About = () => {
         </div>
       </section>
 
+      {/* Why We Are Your Choice */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-3">
+            Why We Are Your Choice
+          </h2>
+          <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            Discover why Sri Ananth Hospital stands out as the trusted healthcare partner in Vikarabad and beyond.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="bg-white border-0 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
+              <CardContent className="p-6 text-center">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">24/7 Emergency Care</h3>
+                <p className="text-gray-600">Round-the-clock medical emergency services with skilled doctors and rapid response.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-0 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
+              <CardContent className="p-6 text-center">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Experienced Doctors</h3>
+                <p className="text-gray-600">Our doctors are highly qualified, trained, and committed to delivering expert care.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-0 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
+              <CardContent className="p-6 text-center">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Modern Infrastructure</h3>
+                <p className="text-gray-600">Equipped with the latest medical technology for diagnosis and treatment.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-0 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
+              <CardContent className="p-6 text-center">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Star className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Award-Winning Service</h3>
+                <p className="text-gray-600">Recognized across Telangana for excellence in healthcare and patient satisfaction.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Our Values */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -225,7 +280,88 @@ const About = () => {
         </div>
       </section>
 
+      {/* Why We're Your Top Choice */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Why We're Your Top Choice</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Schedule a consultation with Sri Ananth Multispecialty Hospital.
+              We are dedicated to helping you regain your mobility, alleviate pain, and improve your quality of life.
+            </p>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                <Clock className="w-6 h-6 text-green-600" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-1">24-Hour Accident & Trauma Care</h3>
+                <p className="text-gray-600">Immediate medical attention for emergencies, day or night.</p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                <Users className="w-6 h-6 text-blue-600" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-1">15+ Expert Doctors</h3>
+                <p className="text-gray-600">Highly qualified specialists across various medical fields.</p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                <Calendar className="w-6 h-6 text-purple-600" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-1">Easy Online Appointments</h3>
+                <p className="text-gray-600">Book your consultation with just a few clicks.</p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                <Shield className="w-6 h-6 text-red-600" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-1">Lowest Infection Rates</h3>
+                <p className="text-gray-600">Stringent hygiene protocols for your safety.</p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                <Star className="w-6 h-6 text-yellow-600" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-1">5+ Years of Excellence</h3>
+                <p className="text-gray-600">Trusted healthcare provider in the region.</p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                <Phone className="w-6 h-6 text-indigo-600" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-1">24/7 Support</h3>
+                <p className="text-gray-600">Always here when you need us.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <Button asChild size="lg">
+              <NavLink to="/contact" className="text-lg">
+                Book Your Appointment Today
+              </NavLink>
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Doctor Profile */}
       <section className="py-16">

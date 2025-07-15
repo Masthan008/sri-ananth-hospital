@@ -1,13 +1,19 @@
-# SPA fallback
-/*    /index.html   200
+# SPA fallback - handle all routes with index.html
+/*    /index.html    200
 
 # Force HTTPS
 /*    https://%{host}%{path}    301!
 
-# Custom error page
+# Cache static assets (handled by netlify.toml headers)
+/assets/*  /assets/:splat  200
+
+# API and other external routes can be added here
+# /api/*    https://api.example.com/:splat    200
+
+# Custom error page (handled by the SPA)
 /*    /index.html    404
 
-# Cache static assets for 1 year
+# Security headers and other settings are in netlify.toml
 /*.js    cache-control: public, max-age=31536000, immutable
 /*.css   cache-control: public, max-age=31536000, immutable
 /*.jpg   cache-control: public, max-age=31536000, immutable

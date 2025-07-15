@@ -20,9 +20,19 @@ export default defineConfig({
     minify: 'esbuild',
     rollupOptions: {
       output: {
-        manualChunks: {
-          react: ['react', 'react-dom', 'react-router-dom'],
-          vendor: ['@radix-ui/react-*', 'lucide-react'],
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('@radix-ui')) {
+              return 'radix';
+            }
+            if (id.includes('lucide-react')) {
+              return 'lucide';
+            }
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+              return 'react-vendor';
+            }
+            return 'vendor';
+          }
         },
       },
     },

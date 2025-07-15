@@ -349,17 +349,20 @@ const WhyChooseUs = () => {
               <Button
                 variant="outline"
                 size="icon"
+                onClick={nextTestimonial}
+                className="bg-white/20 border-white text-white hover:bg-white hover:text-primary"
               >
                 <ChevronRight className="w-4 h-4" />
               </Button>
             </div>
           </div>
+        </div>
 
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Experience the Difference in Healthcare
           </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
             Join thousands of satisfied patients who trust Sri Ananth Hospital for their healthcare needs.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">

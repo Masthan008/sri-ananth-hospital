@@ -102,6 +102,57 @@ const Gallery = () => {
       title: 'Dental Clinic'
     },
     
+    // Newly Added Facilities
+    {
+      id: 'fc6',
+      src: '/images/gallery/debtal-clinic.jpg',
+      alt: 'Dental Operation Theatre',
+      category: 'facilities',
+      title: 'Dental Operation Theatre'
+    },
+    {
+      id: 'fc7',
+      src: '/images/gallery/icu.jpg',
+      alt: 'AC Wards',
+      category: 'facilities',
+      title: 'AC Wards'
+    },
+    {
+      id: 'fc8',
+      src: '/images/gallery/inpatient-ward.jpg',
+      alt: 'General Wards',
+      category: 'facilities',
+      title: 'General Wards'
+    },
+    {
+      id: 'fc9',
+      src: '/images/gallery/pharmacy.jpg',
+      alt: 'Waiting Hall',
+      category: 'facilities',
+      title: 'Waiting Hall'
+    },
+    {
+      id: 'fc10',
+      src: '/images/gallery/DOCTOR WITH PATIENT .png',
+      alt: 'Doctors Lounge',
+      category: 'facilities',
+      title: 'Doctors Lounge'
+    },
+    {
+      id: 'fc11',
+      src: '/images/gallery/PATIENT ROOM .png',
+      alt: 'Deluxe Rooms',
+      category: 'facilities',
+      title: 'Deluxe Rooms'
+    },
+    {
+      id: 'fc12',
+      src: '/images/gallery/LABORATORY .png',
+      alt: 'Laboratory',
+      category: 'facilities',
+      title: 'Laboratory'
+    },
+    
     // Events
     {
       id: 'e1',
